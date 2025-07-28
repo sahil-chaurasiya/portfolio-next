@@ -123,8 +123,9 @@ export default function Projects() {
           className="text-3xl sm:text-4xl font-bold mb-10"
           style={{ fontFamily: "'Pacifico', cursive" }}
         >
-          ✨ What I’ve Been Crafting
+          ✨ What I've Been Crafting
         </motion.h1>
+
 
         <div className="grid gap-10 md:grid-cols-2">
           {projects.map((project, idx) => (

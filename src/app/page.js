@@ -27,10 +27,10 @@ export default function Home() {
         {/* Main content */}
         <div className="relative z-30 mx-auto w-full max-w-7xl p-4">
           <h1 className="text-center text-4xl font-bold text-white md:text-7xl">
-            👋 Hi, I'm Sahil
+            👋 Hi, I&apos;m Sahil
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
-            Welcome to my personal portfolio! I'm a full stack developer who loves building clean and functional web apps.
+            Welcome to my personal portfolio! I&apos;m a full stack developer who loves building clean and functional web apps.
           </p>
           <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center">
             <Link href="/project">
