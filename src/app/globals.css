@@ -1,17 +1,13 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* Theme variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +15,117 @@
   }
 }
 
+html,
 body {
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Custom animation for fade-in-up */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+/* Spotlight animation */
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+/* Project Section Styles */
+.project-card {
+  @apply bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-6 transition-transform transform hover:scale-[1.02];
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.project-title {
+  @apply text-xl font-semibold mb-2 text-neutral-800 dark:text-white;
+}
+
+.project-description {
+  @apply text-sm text-neutral-600 dark:text-neutral-300;
+}
+
+.project-tags {
+  @apply mt-3 flex flex-wrap gap-2;
+}
+
+.project-tag {
+  @apply px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full;
+}
+
+/* Optional: Grid layout for project list */
+.projects-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10;
+}
+
+/* 🔥 Floating Dock Icon Styles */
+.floating-dock-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: inherit;
+}
+
+.floating-dock-icon:hover {
+  transform: scale(1.2) translateY(-2px);
+  color: #6366f1; /* Indigo-500 for light mode */
+}
+
+.dark .floating-dock-icon:hover {
+  color: #a5b4fc; /* Indigo-300 for dark mode */
+}
+
+
+/* global.css or tailwind config */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  color: #f0f0f0;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.glass-dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
 }
