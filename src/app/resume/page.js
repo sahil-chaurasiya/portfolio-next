@@ -17,7 +17,7 @@ export default function ResumePage() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#0d1117] via-[#121c2a] to-[#0d1117] text-white px-6 pt-6 pb-12 md:px-20 lg:px-32 font-sans overflow-x-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#0d1117] via-[#121c2a] to-[#0d1117] text-white px-6 pt-25 pb-12 md:px-20 lg:px-32 font-sans overflow-x-hidden">
       <div className="relative z-10">
         <div className="flex justify-end mb-6">
           <Link href="/">
