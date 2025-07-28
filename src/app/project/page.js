@@ -123,7 +123,7 @@ export default function Projects() {
           className="text-3xl sm:text-4xl font-bold mb-10"
           style={{ fontFamily: "'Pacifico', cursive" }}
         >
-          ✨ What I've Been Crafting
+          ✨ What I&apos;ve Been Crafting
         </motion.h1>
 
 
