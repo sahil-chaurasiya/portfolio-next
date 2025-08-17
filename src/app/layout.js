@@ -25,7 +25,7 @@ export const metadata = {
     siteName: 'Sahil Portfolio',
     images: [
       {
-        url: '/og-image.jpg', // ✅ place this inside /public
+        url: 'https://portfolio-next-eight-rose.vercel.app/og-image.jpg', // ✅ place this inside /public
         width: 1200,
         height: 630,
         alt: 'Sahil Portfolio',
