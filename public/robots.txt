@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-next-eight-rose.vercel.app/sitemap.xml

@@ -5,6 +5,14 @@ import { Spotlight } from "./components/ui/Spotlight";
 import { CanvasRevealEffect } from "./components/ui/canvas-reveal-effect";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "./lib/utils";
+import { Pacifico } from "next/font/google";
+
+// ✅ Load Pacifico only for name
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Home() {
   return (
@@ -25,13 +33,28 @@ export default function Home() {
         <Spotlight className="top-0 left-0 md:top-10 md:left-60 z-20" fill="white" />
 
         {/* Main content */}
-        <div className="relative z-30 mx-auto w-full max-w-7xl p-4">
-          <h1 className="text-center text-4xl font-bold text-white md:text-7xl">
-            👋 Hi, I&apos;m Sahil
+        <div className="relative z-30 mx-auto w-full max-w-7xl p-4 text-center">
+          <h1 className="text-4xl md:text-7xl font-bold text-white">
+            👋 Hi, I&apos;m{" "}
+            <span className={`${pacifico.className} text-white`}>
+              Sahil Chaurasiya
+            </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
-            Welcome to my personal portfolio! I&apos;m a full stack developer who loves building clean and functional web apps.
+
+          {/* SEO-friendly intro */}
+          <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg font-normal text-neutral-300">
+            I&apos;m a <strong>Full-Stack Web Developer</strong> passionate about
+            building clean, functional, and scalable web applications. This portfolio
+            highlights my skills in <strong>frontend</strong> and{" "}
+            <strong>backend development</strong> using technologies like{" "}
+            <strong>Next.js, React, Node.js, Express, and MongoDB</strong>.
           </p>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm md:text-base text-neutral-400">
+            Explore my projects, resume, and developer journey — crafted with a focus
+            on performance, SEO best practices, and modern UI/UX design.
+          </p>
+
           <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center">
             <Link href="/project">
               <button className="px-6 py-2 rounded-md bg-white text-black font-semibold cursor-pointer">
