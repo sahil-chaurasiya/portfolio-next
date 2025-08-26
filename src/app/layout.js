@@ -1,10 +1,12 @@
 // src/app/layout.js
 import './globals.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 export const metadata = {
   title: 'Sahil Portfolio | Full-Stack Developer',
-  description: 'Explore Sahil Chaurasiya’s personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.',
+  description:
+    'Explore Sahil Chaurasiya’s personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.',
   keywords: [
     'Sahil Chaurasiya',
     'Portfolio',
@@ -14,18 +16,19 @@ export const metadata = {
     'React',
     'JavaScript',
     'Frontend',
-    'Backend'
+    'Backend',
   ],
   authors: [{ name: 'Sahil Chaurasiya' }],
   metadataBase: new URL('https://portfolio-next-eight-rose.vercel.app'),
   openGraph: {
     title: 'Sahil Portfolio | Full-Stack Developer',
-    description: 'Discover Sahil Chaurasiya’s work, projects, and developer journey.',
+    description:
+      'Discover Sahil Chaurasiya’s work, projects, and developer journey.',
     url: 'https://portfolio-next-eight-rose.vercel.app',
     siteName: 'Sahil Portfolio',
     images: [
       {
-        url: 'https://portfolio-next-eight-rose.vercel.app/og-image.jpg', // ✅ place this inside /public
+        url: 'https://portfolio-next-eight-rose.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Sahil Portfolio',
@@ -43,38 +46,40 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  // JSON-LD encoded with &apos; for apostrophes
   const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Sahil Chaurasiya",
-    url: "https://portfolio-next-eight-rose.vercel.app",
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Sahil Chaurasiya',
+    url: 'https://portfolio-next-eight-rose.vercel.app',
     sameAs: [
-      "https://instagram.com/sahil_chaurasiya__",
-      "https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/"
+      'https://instagram.com/sahil_chaurasiya__',
+      'https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/',
     ],
-    jobTitle: "Full-Stack Developer",
+    jobTitle: 'Full-Stack Developer',
     worksFor: {
-      "@type": "Organization",
-      name: "Freelance / Open Source"
-    }
+      '@type': 'Organization',
+      name: 'Freelance / Open Source',
+    },
   }
 
-  // Convert to string & replace apostrophes with HTML entity
-  const safeSchema = JSON.stringify(schemaData).replace(/'/g, "&apos;")
+  const safeSchema = JSON.stringify(schemaData).replace(/'/g, '&apos;')
 
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black text-white min-h-screen flex flex-col">
+        {/* Navbar */}
         <Navbar />
-        {children}
 
-        {/* ✅ JSON-LD Schema for Google SEO */}
+        {/* Main Content */}
+        <main className="flex-grow">{children}</main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* JSON-LD Schema for SEO */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: safeSchema,
-          }}
+          dangerouslySetInnerHTML={{ __html: safeSchema }}
         />
       </body>
     </html>
