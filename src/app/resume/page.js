@@ -139,12 +139,12 @@ export default function ResumePage() {
         <DecorDivider />
         <Section title="Extra Curricular" icon="🎯">
           <ul className="list-disc ml-6 space-y-1 text-gray-300 leading-relaxed">
-            <li>Class Representative – SISTec GN</li>
+            {/* <li>Class Representative – SISTec GN</li> */}
             <li>Certification in Climate Change – Amnesty International</li>
           </ul>
         </Section>
 
-        <DecorDivider />
+        {/* <DecorDivider />
         <Section title="Interests & Hobbies" icon="🎨">
           <ul className="list-disc ml-6 space-y-1 text-gray-300 leading-relaxed">
             <li>UI/UX Design & Wireframing</li>
@@ -155,7 +155,7 @@ export default function ResumePage() {
           </ul>
         </Section>
 
-        <DecorDivider />
+        <DecorDivider /> */}
         <Section title="Online Profiles" icon="🌐">
           <div className="flex flex-wrap gap-6 text-md text-blue-400 underline decoration-dotted">
             <a href="https://github.com/sahil-chaurasiya">GitHub</a>
