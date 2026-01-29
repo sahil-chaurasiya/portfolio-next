@@ -2,11 +2,20 @@
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/footer'
+import { Pacifico } from 'next/font/google'
+
+// Load Pacifico font once globally
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-pacifico',
+})
 
 export const metadata = {
   title: 'Sahil Portfolio | Full-Stack Developer',
   description:
-    'Explore Sahil Chaurasiya’s personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.',
+    'Explore Sahil Chaurasiya\'s personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.',
   keywords: [
     'Sahil Chaurasiya',
     'Portfolio',
@@ -23,12 +32,12 @@ export const metadata = {
   openGraph: {
     title: 'Sahil Portfolio | Full-Stack Developer',
     description:
-      'Discover Sahil Chaurasiya’s work, projects, and developer journey.',
+      'Discover Sahil Chaurasiya\'s work, projects, and developer journey.',
     url: 'https://portfolio-next-eight-rose.vercel.app',
     siteName: 'Sahil Portfolio',
     images: [
       {
-        url: 'https://portfolio-next-eight-rose.vercel.app/og-image.jpg',
+        url: 'https://portfolio-next-eight-rose.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Sahil Portfolio',
@@ -65,7 +74,7 @@ export default function RootLayout({ children }) {
   const safeSchema = JSON.stringify(schemaData).replace(/'/g, '&apos;')
 
   return (
-    <html lang="en">
+    <html lang="en" className={pacifico.variable}>
       <body className="bg-black text-white min-h-screen flex flex-col">
         {/* Navbar */}
         <Navbar />
