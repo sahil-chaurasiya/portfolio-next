@@ -13,7 +13,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400 mt-1">
             Full-Stack Developer | Building Web Experiences
           </p>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-300 mt-1">
             © {new Date().getFullYear()} All Rights Reserved.
           </p>
         </div>
@@ -32,25 +32,31 @@ export default function Footer() {
             href="https://github.com/sahil-chaurasiya"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Sahil Chaurasiya GitHub profile"
             whileHover={{ scale: 1.2 }}
           >
             <Github className="w-6 h-6 hover:text-yellow-400 transition" />
           </motion.a>
+
           <motion.a
             href="https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Sahil Chaurasiya LinkedIn profile"
             whileHover={{ scale: 1.2 }}
           >
             <Linkedin className="w-6 h-6 hover:text-yellow-400 transition" />
           </motion.a>
+
           <motion.a
             href="mailto:chaurasiyasahil18@gmail.com"
+            aria-label="Send email to Sahil Chaurasiya"
             whileHover={{ scale: 1.2 }}
           >
             <Mail className="w-6 h-6 hover:text-yellow-400 transition" />
           </motion.a>
         </div>
+
       </div>
     </footer>
   );

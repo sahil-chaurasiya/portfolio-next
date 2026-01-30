@@ -2,16 +2,14 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Spotlight } from "./components/ui/Spotlight";
+import dynamic from "next/dynamic";
 import { cn } from "./lib/utils";
-// import { Pacifico } from "next/font/google";
 
-// // ✅ Load Pacifico for name
-// const pacifico = Pacifico({
-//   weight: "400",
-//   subsets: ["latin"],
-//   display: "swap",
-// });
+// Lazy load Spotlight to reduce initial bundle
+const Spotlight = dynamic(() => import("./components/ui/Spotlight").then(mod => mod.Spotlight), {
+  ssr: false, // only render on client
+});
+
 
 export default function Home() {
   return (

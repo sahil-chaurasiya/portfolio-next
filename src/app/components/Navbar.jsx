@@ -18,7 +18,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 text-white bg-black px-6 py-4 shadow-md">
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+        className="fixed top-0 left-0 w-full z-50 text-white bg-black px-6 py-4 shadow-md"
+      >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <h1 className="text-2xl font-bold">Sahil's Portfolio</h1>
 
@@ -38,9 +42,16 @@ export default function Navbar() {
         </div>
 
         {/* Hamburger */}
-        <button onClick={() => setIsOpen(true)} className="md:hidden">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="md:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
           <Menu size={28} className="text-yellow-400" />
         </button>
+
       </div>
 
       {/* Center Pop Modal Menu */}
@@ -59,6 +70,9 @@ export default function Navbar() {
 
             {/* Pop Modal */}
             <motion.div
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
@@ -69,10 +83,12 @@ export default function Navbar() {
                 {/* Close Button */}
                 <button
                   onClick={() => setIsOpen(false)}
+                  aria-label="Close navigation menu"
                   className="absolute top-4 right-4 text-yellow-400 hover:rotate-90 transition"
                 >
                   <X size={28} />
                 </button>
+
 
                 {/* Nav Links with Stagger */}
                 <motion.div
