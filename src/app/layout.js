@@ -15,24 +15,23 @@ const pacifico = Pacifico({
 export const metadata = {
   title: 'Sahil Portfolio | Full-Stack Developer',
   description:
-    'Explore Sahil Chaurasiya\'s personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.',
+    "Explore Sahil Chaurasiya's personal portfolio built with Next.js. Showcasing projects, skills, and experience as a full-stack web developer.",
   keywords: [
     'Sahil Chaurasiya',
     'Portfolio',
     'Full-Stack Developer',
     'Web Developer',
-    'Next.js',
-    'React',
-    'JavaScript',
-    'Frontend',
-    'Backend',
+    'Next.js Developer India',
+    'MERN Stack Developer',
+    'Django Full Stack Developer',
   ],
   authors: [{ name: 'Sahil Chaurasiya' }],
   metadataBase: new URL('https://portfolio-next-eight-rose.vercel.app'),
+
   openGraph: {
     title: 'Sahil Portfolio | Full-Stack Developer',
     description:
-      'Discover Sahil Chaurasiya\'s work, projects, and developer journey.',
+      "Discover Sahil Chaurasiya's work, projects, and developer journey.",
     url: 'https://portfolio-next-eight-rose.vercel.app',
     siteName: 'Sahil Portfolio',
     images: [
@@ -46,9 +45,11 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
+
   icons: {
     icon: '/favicon.ico',
   },
+
   alternates: {
     canonical: 'https://portfolio-next-eight-rose.vercel.app',
   },
@@ -56,26 +57,90 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const schemaData = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Sahil Chaurasiya',
-    url: 'https://portfolio-next-eight-rose.vercel.app',
-    sameAs: [
-      'https://instagram.com/sahil_chaurasiya__',
-      'https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/',
-    ],
-    jobTitle: 'Full-Stack Developer',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Freelance / Open Source',
-    },
+    "@context": "https://schema.org",
+    "@graph": [
+
+      // ⭐ PERSON
+      {
+        "@type": "Person",
+        "@id": "https://portfolio-next-eight-rose.vercel.app/#person",
+        "name": "Sahil Chaurasiya",
+        "url": "https://portfolio-next-eight-rose.vercel.app",
+        "jobTitle": "Full-Stack Developer",
+        "sameAs": [
+          "https://instagram.com/sahil_chaurasiya__",
+          "https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/",
+          "https://github.com/sahil-chaurasiya"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance / Open Source"
+        }
+      },
+
+      // ⭐ WEBSITE
+      {
+        "@type": "WebSite",
+        "@id": "https://portfolio-next-eight-rose.vercel.app/#website",
+        "url": "https://portfolio-next-eight-rose.vercel.app",
+        "name": "Sahil Chaurasiya Portfolio",
+        "publisher": {
+          "@id": "https://portfolio-next-eight-rose.vercel.app/#person"
+        }
+      },
+
+      // ⭐ SITE STRUCTURE (PAGES)
+      {
+        "@type": "WebPage",
+        "name": "Home",
+        "url": "https://portfolio-next-eight-rose.vercel.app/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "About Sahil Chaurasiya",
+        "url": "https://portfolio-next-eight-rose.vercel.app/about"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Projects",
+        "url": "https://portfolio-next-eight-rose.vercel.app/project"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Skills",
+        "url": "https://portfolio-next-eight-rose.vercel.app/skills"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Resume",
+        "url": "https://portfolio-next-eight-rose.vercel.app/resume"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Contact",
+        "url": "https://portfolio-next-eight-rose.vercel.app/contact"
+      },
+
+      // ⭐ RESUME DOCUMENT ENTITY
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://portfolio-next-eight-rose.vercel.app/#resume",
+        "name": "Sahil Chaurasiya Resume",
+        "url": "https://portfolio-next-eight-rose.vercel.app/resume",
+        "author": {
+          "@id": "https://portfolio-next-eight-rose.vercel.app/#person"
+        }
+      }
+
+    ]
   }
 
-  const safeSchema = JSON.stringify(schemaData).replace(/'/g, '&apos;')
+  const safeSchema = JSON.stringify(schemaData).replace(/</g, '\\u003c')
 
   return (
     <html lang="en" className={pacifico.variable}>
       <body className="bg-black text-white min-h-screen flex flex-col">
+
         {/* Navbar */}
         <Navbar />
 
@@ -85,11 +150,12 @@ export default function RootLayout({ children }) {
         {/* Footer */}
         <Footer />
 
-        {/* JSON-LD Schema for SEO */}
+        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: safeSchema }}
         />
+
       </body>
     </html>
   )
