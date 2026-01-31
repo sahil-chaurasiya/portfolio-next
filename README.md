@@ -1,8 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 Sahil Chaurasiya — Developer Portfolio
 
-## Getting Started
+🚀 **Personal Portfolio Website built with Next.js**  
+Showcasing my work, skills, projects, and journey as a developer.
 
-First, run the development server:
+> 🔍 Currently ranking in **top search results on Google** for queries like  
+> **"Sahil Chaurasiya"**, **"Sahil Chaurasiya skills"**, and related searches.
+
+🌍 **Live Website:**  
+👉 https://portfolio-next-eight-rose.vercel.app/
+
+---
+
+## ⚡ Performance Metrics
+
+Verified by **Google PageSpeed Insights** (Jan 31, 2026)
+
+### 🖥️ Desktop Performance
+- **Performance:** 100/100 🎯
+- **Accessibility:** 96/100 ✅
+- **Best Practices:** 100/100 ✅
+- **SEO:** 100/100 ✅
+
+**Core Web Vitals (Desktop):**
+- First Contentful Paint: **0.2s** ⚡
+- Largest Contentful Paint: **0.5s** 🚀
+- Total Blocking Time: **70ms**
+- Cumulative Layout Shift: **0** (Perfect!)
+- Speed Index: **0.6s**
+
+### 📱 Mobile Performance
+- **Performance:** 90/100 🎯
+- **Accessibility:** 100/100 ✅
+- **Best Practices:** 100/100 ✅
+- **SEO:** 100/100 ✅
+
+**Core Web Vitals (Mobile):**
+- First Contentful Paint: **0.9s** ⚡
+- Largest Contentful Paint: **3.6s**
+- Total Blocking Time: **100ms**
+- Cumulative Layout Shift: **0** (Perfect!)
+- Speed Index: **0.9s**
+
+---
+
+## ✨ About This Project
+
+This is my **official personal portfolio**, designed to be:
+- Fast ⚡
+- SEO-optimized 🔍
+- Clean & modern 🎨
+- Fully responsive 📱
+
+It represents **who I am as a developer**, my skills, and the kind of work I care about building.
+
+The site is built using the **Next.js App Router**, optimized fonts, smooth animations, and modern UI patterns.
+
+---
+
+## 🧠 What You'll Find Here
+
+- 👋 **Introduction & Profile**
+- 🛠 **Skills & Expertise**
+- 📂 **Projects & Work**
+- 🎯 **Career Focus & Interests**
+- 🌐 **Social & Contact Links**
+- ⚡ **High-performance, SEO-friendly structure**
+
+This portfolio is intentionally minimal, professional, and scalable — just like real-world products.
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **JavaScript (ES6+)**
+- **CSS / Modern UI styling**
+- **Framer Motion** (animations)
+- **Vercel Fonts (next/font)**
+- **Deployed on Vercel**
+
+> ⚙️ Built with performance, accessibility, and long-term scalability in mind.
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sahil-chaurasiya/portfolio-next.git
+cd portfolio-next
+```
+
+Install dependencies and start the dev server:
 
 ```bash
 npm run dev
@@ -14,23 +105,65 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser at:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Any changes to `app/page.js` will auto-reload instantly.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔍 SEO & Performance Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ **Perfect SEO Score** (100/100)  
+✅ **Lightning-fast load times** with Next.js  
+✅ **Font optimization** using `next/font`  
+✅ **Clean URLs** and semantic HTML structure  
+✅ **Zero Cumulative Layout Shift** (CLS = 0)  
+✅ **Optimized metadata** for search engines  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This portfolio is **actively indexed and ranked by Google** for relevant searches.
 
-## Deploy on Vercel
+### 🎯 What Google Says
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+According to **PageSpeed Insights**:
+- Uses HTTPS ✅
+- Mobile-friendly viewport ✅
+- Valid HTML structure ✅
+- Proper heading hierarchy ✅
+- Accessible color contrast ✅
+- No console errors ✅
+- Valid source maps ✅
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Deployment
+
+The project is deployed on **Vercel**, ensuring:
+
+- Global CDN
+- Automatic builds
+- Zero-config scaling
+- Edge network optimization
+
+You can deploy your own version instantly:  
+👉 https://vercel.com/new
+
+---
+
+## 📫 Connect With Me
+
+🌐 **Portfolio:** https://portfolio-next-eight-rose.vercel.app/  
+💼 **GitHub:** https://github.com/sahil-chaurasiya
+
+---
+
+## ⭐ Final Note
+
+This portfolio is a **living project** — continuously evolving as I grow, build, and learn.
+
+If you like the design or structure, feel free to ⭐ the repo or use it as inspiration.
+
+**Thanks for stopping by!** 🙌
