@@ -121,7 +121,7 @@ export default function Home() {
             className="px-4 py-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 rounded-full backdrop-blur-sm"
             title="CGPA at SISTec GN"
           >
-            <div className="text-lg sm:text-xl font-bold text-green-400" aria-label="CGPA 7.12">7.12</div>
+            <div className="text-lg sm:text-xl font-bold text-green-400" aria-label="CGPA 7.32">7.32</div>
             <div className="text-xs text-gray-400">CGPA</div>
           </div>
         </motion.div>

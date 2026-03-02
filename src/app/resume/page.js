@@ -2,7 +2,7 @@
 // SEO NOTE: Export this metadata from your /resume/page.js (server component):
 // export const metadata = {
 //   title: 'Resume – Sahil Chaurasiya | Full-Stack Developer',
-//   description: 'View and download the resume of Sahil Chaurasiya – Full-Stack Developer with internship at Shroti Telecom, projects in Next.js, Django, Node.js, and MongoDB. CGPA 7.12, SISTec GN Bhopal.',
+//   description: 'View and download the resume of Sahil Chaurasiya – Full-Stack Developer with internship at Shroti Telecom, projects in Next.js, Django, Node.js, and MongoDB. CGPA 7.32, SISTec GN Bhopal.',
 //   alternates: { canonical: 'https://portfolio-next-eight-rose.vercel.app/resume' },
 //   openGraph: {
 //     title: 'Resume – Sahil Chaurasiya | Full-Stack Developer',
@@ -181,7 +181,7 @@ export default function ResumePage() {
                   </div>
                   <div className="flex items-center gap-3 text-sm">
                     <FaGraduationCap className="text-cyan-400" />
-                    <span className="text-gray-300">CGPA: 7.12</span>
+                    <span className="text-gray-300">CGPA: 7.32</span>
                   </div>
                 </div>
 
@@ -354,7 +354,7 @@ export default function ResumePage() {
                     school: 'Sagar Institute of Science & Technology (SISTec GN)',
                     degree: 'B.Tech. - Computer Science & Engineering',
                     year: '2022 – 2026',
-                    grade: 'CGPA: 7.12 / 10'
+                    grade: 'CGPA: 7.32 / 10'
                   },
                   {
                     school: 'Shri Durga Ji Public School, Azamgarh',
