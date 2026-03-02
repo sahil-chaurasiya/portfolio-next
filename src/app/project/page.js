@@ -1,4 +1,15 @@
 'use client';
+// SEO NOTE: Export this metadata from your /project/page.js (server component):
+// export const metadata = {
+//   title: 'Projects – Sahil Chaurasiya | Full-Stack Web Developer',
+//   description: 'Explore full-stack projects by Sahil Chaurasiya including the SISTec Alumni Platform, Sheetal Academy Website, AI Ticket Booking System, and SEO-optimized portfolio.',
+//   alternates: { canonical: 'https://portfolio-next-eight-rose.vercel.app/project' },
+//   openGraph: {
+//     title: 'Projects – Sahil Chaurasiya | Full-Stack Developer',
+//     description: 'Full-stack projects built with Next.js, MERN stack, Django, Python, and more.',
+//     url: 'https://portfolio-next-eight-rose.vercel.app/project',
+//   },
+// };
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { CardSpotlight } from '../components/ui/card-spotlight';
@@ -103,22 +114,24 @@ function ProjectCard({ project, index }) {
             </div>
 
             {/* Link */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-auto text-cyan-300 hover:text-cyan-200 transition-colors text-sm font-medium group"
-            >
-              <span>View Project</span>
-              <svg 
-                className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+            {project.link && project.link !== '#' && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-auto text-cyan-300 hover:text-cyan-200 transition-colors text-sm font-medium group"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+                <span>View Project</span>
+                <svg
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            )}
           </div>
         </CardSpotlight>
       </motion.div>
@@ -129,64 +142,80 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   const projects = [
     {
-      title: 'Sheetal Academy – Official Website',
-      date: '28 Jul, 2025 - 03 Aug, 2025',
+      title: 'Personal Developer Portfolio (SEO Optimized)',
+      date: '06 Nov, 2025 – 20 Nov, 2025',
       description:
-        'Designed and developed a responsive single-page website for Sheetal Academy (Uran) with an admin dashboard for managing jobs and events. Features include JWT authentication, MongoDB integration, public event registration with email confirmations, and mobile-first design.',
-      tech: ['Next.js', 'Tailwind CSS', 'MongoDB', 'JWT', 'EmailJS', 'SEO'],
+        'Designed and developed a personal developer portfolio using Next.js. Implemented technical SEO including meta tags, sitemap, robots.txt, and structured content. Optimized page performance and accessibility for better search ranking. Serves as primary client acquisition and credibility platform.',
+      tech: ['Next.js', 'Technical SEO', 'Performance Optimization', 'Vercel', 'Responsive Web Design'],
+      link: 'https://portfolio-next-eight-rose.vercel.app/',
+      featured: true,
+      teamSize: '1',
+      highlights: [
+        'Achieved first-page Google rankings for multiple developer-related keywords',
+        'Top position for select search queries',
+        'Sitemap, robots.txt, and structured meta tags',
+        'Optimized performance and accessibility for better ranking',
+      ],
+    },
+    {
+      title: 'Sheetal Academy, Uran (Navi Mumbai) – Business Website & SEO Implementation',
+      date: '28 Jul, 2025 – 03 Aug, 2025',
+      description:
+        'Developed and deployed a production website and admin dashboard using Next.js and MongoDB for a live coaching institute. Built secure authentication and dynamic content management for announcements, jobs, and events. Implemented form handling and lead capture workflows with automated responses.',
+      tech: ['Next.js', 'Tailwind CSS', 'MongoDB', 'JWT', 'EmailJS', 'SEO Optimization', 'Vercel'],
       link: 'https://sheetal-academy.vercel.app/',
       featured: true,
       teamSize: '1',
       highlights: [
-        'Admin dashboard with JWT authentication',
-        'MongoDB Atlas integration for events and jobs',
-        'Mobile-first responsive design',
-        'Deployed live on Vercel with SEO optimization',
+        'Admin dashboard with JWT authentication and dynamic content management',
+        'Form handling and lead capture with automated email responses',
+        'Achieved first-page Google rankings for institute search queries including top position for specific keywords',
+        'Hosted on Vercel with responsive UI and performance optimization for mobile users',
       ],
     },
     {
-      title: 'SISTec Alumni Portal',
+      title: 'SISTec Alumni Networking Platform – Real-Time Web Application',
       mentor: 'Prof. Nargish Gupta',
       teamSize: '4',
       description:
-        'Led the development team to build a full-stack social platform for SISTec students, alumni, and admins. Features include posts, discussion forums, events, real-time messaging with Socket.io, and job opportunities. Enables seamless campus communication and alumni interaction.',
-      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io'],
+        'Led development of a full-stack networking platform for SISTec students, alumni, and admins with dedicated sections for posts, discussion forums, events, real-time messaging, and job opportunities. Enables seamless campus communication, alumni interaction, and event engagement.',
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'Deployment'],
       link: 'http://alumni.sistec.ac.in/',
       featured: true,
       highlights: [
-        'Real-time messaging with Socket.io',
-        'Dedicated sections for posts, forums, and events',
-        'Secure login and responsive UI',
-        'Live deployment on official subdomain',
+        'Architected MongoDB schema for conversations and optimized message retrieval queries',
+        'Implemented authentication, protected routes, and role-based dashboards (admin/user)',
+        'Resolved real-time chat event conflicts and managed persistent user sessions',
+        'Coordinated frontend–backend integration and deployed on official institute subdomain',
       ],
     },
     {
-      title: 'AI-Based Museum Ticket Booking System',
+      title: 'AI-Based Museum Ticket Booking Automation System',
       mentor: 'Dr. Bhavna Gupta',
       teamSize: '6',
       description:
-        'Built an intelligent chatbot that automated the entire ticket booking workflow. Integrated chat + booking flow, reduced multiple manual steps into a single automated pipeline. Implemented structured user input capture, automated pricing, and ticket generation.',
+        'Built an intelligent chatbot that automated the entire ticket booking workflow. Integrated chat and booking flow, reducing multiple manual steps into a single automated pipeline. Implemented structured user input capture, automated pricing, and ticket generation.',
       tech: ['Python', 'Streamlit', 'MonsterAPI'],
       link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx?usp=drive_link',
       highlights: [
-        'Single interface for chat and booking',
-        'Automated pricing calculation',
-        'Structured ticket generation',
-        'Reduced manual booking steps significantly',
+        'Single interface combining chat and booking flow',
+        'Automated pricing calculation and ticket generation',
+        'Structured user input capture pipeline',
+        'Significantly reduced manual booking steps',
       ],
     },
     {
       title: 'Java Data Structures Desktop Application',
       teamSize: '1',
       description:
-        'Designed and developed an interactive desktop application in Java with a GUI-based menu system for performing operations on core data structures. Implemented insertion, deletion, traversal, and search methods using OOP principles. The interface allowed users to visualize operations dynamically.',
+        'Designed and developed an interactive desktop application in Java with a GUI-based menu system for performing operations on core data structures (Array, Stack, Queue, Linked List, Tree, Graph). Implemented insertion, deletion, traversal, and search using OOP principles with dynamic visualization.',
       tech: ['Java', 'Java Swing', 'OOP', 'DSA'],
       link: '#',
       highlights: [
-        'GUI-based visualization of data structures',
-        'Error handling and input validation',
+        'GUI-based dynamic visualization of data structure operations',
+        'Error handling and input validation throughout',
         'Local file-based state persistence',
-        'Built using Eclipse IDE',
+        'Built and executed entirely using Eclipse IDE',
       ],
     },
     {
@@ -194,20 +223,23 @@ export default function Projects() {
       mentor: 'Dr. Nargish Gupta',
       teamSize: '1',
       description:
-        'Developed a C++ console-based application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface. Each module supported insertion, deletion, traversal, and search operations.',
+        'Developed a C++ console-based application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface. Each module supports insertion, deletion, traversal, and search operations. Focused on modular coding and dynamic memory management.',
       tech: ['C++', 'DSA'],
       link: 'https://onlinegdb.com/Gvhd1l31a',
       highlights: [
-        'Modular coding structure',
+        'Modular coding structure across all data structure modules',
         'Dynamic memory management',
-        'Complete CRUD operations',
+        'Complete CRUD operations per module',
         'Console-based interactive interface',
       ],
     },
   ];
 
   return (
-    <main className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-16 overflow-hidden">
+    <main
+      className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-16 overflow-hidden"
+      aria-label="Projects by Sahil Chaurasiya – Full-Stack Developer"
+    >
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 z-0">
         {/* Top Glow */}
@@ -240,27 +272,40 @@ export default function Projects() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
-<motion.div
-  initial={{ y: -30, opacity: 0 }}
-  whileInView={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.6 }}
-  className="text-center mb-16"
+        <motion.div
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h1
+  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent relative"
+  style={{ fontFamily: 'var(--font-pacifico), cursive', lineHeight: '1.2', paddingBottom: '0.29em', marginBottom: '0.5rem' }}
 >
-  <h1
-  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
-  style={{ 
-    fontFamily: 'var(--font-pacifico), cursive',
-    lineHeight: '1.2',
-    paddingBottom: '0.29em',
-    marginBottom: '0.5rem'
-  }}
->
+  {/* Hidden for SEO but not visible */}
+  <span
+    style={{
+      position: 'absolute',
+      width: 1,
+      height: 1,
+      padding: 0,
+      margin: -1,
+      overflow: 'hidden',
+      clip: 'rect(0,0,0,0)',
+      whiteSpace: 'nowrap',
+      border: 0,
+    }}
+  >
+    Projects – Sahil Chaurasiya | Full-Stack Web Developer | Full-Stack Projects including Alumni Platform, Sheetal Academy Website, AI Ticket Booking System, SEO Portfolio
+  </span>
+
+  {/* Visible gradient & emoji text */}
   ✨ What I&apos;ve Been Crafting
 </h1>
-  <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-    A collection of projects showcasing full-stack development, automation, and intelligent systems
-  </p>
-</motion.div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            A collection of projects showcasing full-stack development, automation, and intelligent systems
+          </p>
+        </motion.div>
 
         {/* Stats Bar */}
         <motion.div

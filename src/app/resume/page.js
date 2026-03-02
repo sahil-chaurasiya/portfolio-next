@@ -1,4 +1,15 @@
 'use client';
+// SEO NOTE: Export this metadata from your /resume/page.js (server component):
+// export const metadata = {
+//   title: 'Resume – Sahil Chaurasiya | Full-Stack Developer',
+//   description: 'View and download the resume of Sahil Chaurasiya – Full-Stack Developer with internship at Shroti Telecom, projects in Next.js, Django, Node.js, and MongoDB. CGPA 7.12, SISTec GN Bhopal.',
+//   alternates: { canonical: 'https://portfolio-next-eight-rose.vercel.app/resume' },
+//   openGraph: {
+//     title: 'Resume – Sahil Chaurasiya | Full-Stack Developer',
+//     description: 'Resume of Sahil Chaurasiya: internship, projects, certifications, and technical skills.',
+//     url: 'https://portfolio-next-eight-rose.vercel.app/resume',
+//   },
+// };
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -28,7 +39,10 @@ export default function ResumePage() {
   const isHeadingInView = useInView(headingRef, { once: true });
 
   return (
-    <main className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-16 overflow-hidden">
+    <main
+      className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-16 overflow-hidden"
+      aria-label="Resume of Sahil Chaurasiya – Full-Stack Developer"
+    >
       {/* Enhanced Background Effects - Same as other pages */}
       <div className="absolute inset-0 z-0">
         {/* Top Glow */}
@@ -271,6 +285,8 @@ export default function ResumePage() {
                     'Database Management',
                     'Real-time Systems',
                     'REST APIs',
+                    'Role-Based Access Control',
+                    'SEO Optimization',
                     'Web Applications'
                   ].map((skill, idx) => (
                     <div key={idx} className="flex items-center gap-2">
@@ -288,28 +304,42 @@ export default function ResumePage() {
             {/* Brief Summary */}
             <Section title="Brief Summary" icon="🧠">
               <p className="text-gray-300 text-lg leading-relaxed">
-                A detail-oriented Computer Science student skilled in <strong className="text-white">automation workflows</strong>, <strong className="text-white">chatbots</strong>, <strong className="text-white">backend development</strong>, <strong className="text-white">APIs</strong>, and <strong className="text-white">data handling</strong>. 
-                Experienced in identifying manual processes and converting them into efficient automated solutions using Python, Node.js, and modern web technologies. 
-                Passionate about building scalable systems, designing intelligent user experiences, and using automation to improve accuracy, reduce repetitive work, and enhance productivity.
+                Full-stack developer experienced in building and deploying <strong className="text-white">production-ready web applications</strong> using <strong className="text-white">Node.js</strong>, <strong className="text-white">Django</strong>, and <strong className="text-white">Next.js</strong>. 
+                Developed a live campus networking platform with real-time messaging, role-based access control, and optimized database queries. 
+                Skilled in <strong className="text-white">automation workflows</strong>, <strong className="text-white">chatbots</strong>, <strong className="text-white">backend development</strong>, <strong className="text-white">APIs</strong>, and <strong className="text-white">data handling</strong>.
+                Comfortable debugging APIs, working with existing codebases, and shipping features in collaborative environments.
               </p>
             </Section>
 
-            {/* Current Role */}
-            <Section title="Current Position" icon="💼">
+            {/* Internship */}
+            <Section title="Internship" icon="💼">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
                 <div className="relative bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
+                    <div className="p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shrink-0">
                       <FaBriefcase className="w-6 h-6 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">Software Developer Intern</h3>
-                      <p className="text-cyan-400 font-medium mb-2">Shroti Telecom • Present</p>
-                      <p className="text-gray-300 leading-relaxed">
-                        Working with <strong className="text-white">Django</strong> to build and maintain backend systems, APIs, and data-driven workflows. 
-                        Gaining hands-on experience in production-level backend development, real-world data handling, and scalable system design.
-                      </p>
+                    <div className="w-full">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                        <h3 className="text-xl font-bold text-white">Junior Software Developer</h3>
+                        <span className="text-xs text-gray-500 font-mono">22 Aug, 2025 – 22 Jan, 2026</span>
+                      </div>
+                      <p className="text-cyan-400 font-medium mb-3">Shroti Telecom Pvt. Ltd.</p>
+                      <ul className="space-y-2 text-gray-300 text-sm leading-relaxed list-none">
+                        {[
+                          'Developed and maintained REST APIs using Django and FastAPI for internal and client-facing applications.',
+                          'Implemented authentication, authorization, and role-based access control for secure data handling.',
+                          'Debugged API responses and fixed integration issues affecting frontend workflows.',
+                          'Optimized database queries and improved response consistency.',
+                          'Worked on feature updates and bug fixes in an existing production codebase.',
+                        ].map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -321,7 +351,7 @@ export default function ResumePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   {
-                    school: 'Sagar Institute of Science & Technology',
+                    school: 'Sagar Institute of Science & Technology (SISTec GN)',
                     degree: 'B.Tech. - Computer Science & Engineering',
                     year: '2022 – 2026',
                     grade: 'CGPA: 7.12 / 10'
@@ -357,11 +387,12 @@ export default function ResumePage() {
             <Section title="Technical Skills" icon="🛠️">
               <div className="space-y-6">
                 {[
-                  { category: 'Languages', skills: ['JavaScript', 'Python', 'Core Java', 'C++', 'SQL'] },
+                  { category: 'Languages', skills: ['JavaScript', 'Python', 'C++', 'Core Java', 'SQL'] },
                   { category: 'Frontend', skills: ['React.js', 'Next.js', 'Tailwind CSS', 'HTML', 'CSS'] },
-                  { category: 'Backend', skills: ['Node.js', 'Express.js', 'Django', 'REST APIs', 'Socket.io'] },
+                  { category: 'Backend', skills: ['Node.js', 'Express.js', 'Django', 'FastAPI', 'REST APIs', 'Socket.io'] },
                   { category: 'Databases', skills: ['MongoDB', 'PostgreSQL', 'MySQL'] },
-                  { category: 'Tools & Others', skills: ['Git', 'GitHub', 'Linux', 'Postman', 'Render', 'Streamlit'] }
+                  { category: 'Tools & Others', skills: ['Git', 'GitHub', 'Linux', 'JWT', 'Postman', 'Vercel', 'Streamlit'] },
+                  { category: 'Core CS', skills: ['DSA', 'DBMS', 'OOP'] },
                 ].map((skillCat, idx) => (
                   <SkillCategory key={idx} {...skillCat} />
                 ))}
@@ -374,11 +405,13 @@ export default function ResumePage() {
               <Section title="Awards & Achievements" icon="🏆">
                 <div className="space-y-4">
                   {[
+                    'Best Intern Award – Shroti Telecom Pvt. Ltd. (2026)',
                     'First Position in Number Games Season 4 • SISTec College',
                     'Gold Badge for Problem Solving • CodeChef',
                     'Five Star Badges in Java & Python • HackerRank',
                     'Five Star Badges in Java, C++ & Python • HackerEarth',
-                    'Smart India Hackathon • Participant'
+                    'Smart India Hackathon • Participant',
+                    'Selected as Class Representative',
                   ].map((achievement, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="text-2xl">🏅</div>
@@ -397,7 +430,7 @@ export default function ResumePage() {
                     'Java (Basic) • HackerRank',
                     'The Joy of Computing using Python • NPTEL',
                     'Tools of Trade: Linux and SQL • Google (Coursera)',
-                    'Climate Change and Human Rights • Amnesty International'
+                    'Climate Change and Human Rights • Amnesty International',
                   ].map((cert, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="text-2xl">📄</div>
@@ -413,9 +446,10 @@ export default function ResumePage() {
               <div className="flex flex-wrap gap-3">
                 {[
                   { name: 'GitHub', url: 'https://github.com/sahil-chaurasiya', color: 'from-gray-800 to-black' },
+                  { name: 'Portfolio', url: 'https://portfolio-next-eight-rose.vercel.app/', color: 'from-violet-600 to-purple-600' },
                   { name: 'CodeChef', url: 'https://www.codechef.com/users/sahil73', color: 'from-orange-600 to-red-600' },
                   { name: 'HackerRank', url: 'https://www.hackerrank.com/profile/chaurasiyasahil1', color: 'from-green-600 to-emerald-600' },
-                  { name: 'HackerEarth', url: 'https://www.hackerearth.com/@chaurasiyasahil18/', color: 'from-blue-600 to-cyan-600' }
+                  { name: 'HackerEarth', url: 'https://www.hackerearth.com/@chaurasiyasahil18/', color: 'from-blue-600 to-cyan-600' },
                 ].map((profile, idx) => (
                   <motion.a
                     key={idx}
@@ -436,9 +470,12 @@ export default function ResumePage() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: 'Date of Birth', value: '01 July, 2004' },
+                  { label: 'Gender', value: 'Male' },
                   { label: 'Languages', value: 'English & Hindi' },
+                  { label: 'Current Address', value: 'SISTec GN, Gandhinagar, Bhopal, MP – 462036' },
+                  { label: 'Permanent Address', value: 'Tahbarpur, Azamgarh, UP – 276208' },
                   { label: 'Email', value: 'chaurasiyasahil18@gmail.com', link: 'mailto:chaurasiyasahil18@gmail.com' },
-                  { label: 'Phone', value: '+91-8176078586', link: 'tel:+918176078586' }
+                  { label: 'Phone', value: '+91-8176078586', link: 'tel:+918176078586' },
                 ].map((detail, idx) => (
                   <div key={idx} className="bg-gradient-to-br from-slate-900/30 to-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-4">
                     <p className="text-xs text-gray-500 mb-1">{detail.label}</p>
@@ -543,41 +580,49 @@ const SkillCategory = ({ category, skills }) => (
 
 const projects = [
   {
-    title: 'Sheetal Academy – Official Website',
-    date: '28 Jul, 2025 - 03 Aug, 2025',
-    tech: 'Next.js, Tailwind CSS, MongoDB, JWT, EmailJS',
-    desc: 'Responsive single-page website with admin dashboard for managing jobs and events. Features JWT authentication, MongoDB integration, public event registration with email confirmations, and mobile-first design.',
+    title: 'Personal Developer Portfolio (SEO Optimized)',
+    date: '06 Nov, 2025 – 20 Nov, 2025',
+    tech: 'Next.js, Technical SEO, Performance Optimization, Deployment, Responsive Web Design',
+    desc: 'Designed and developed a personal developer portfolio using Next.js. Implemented technical SEO including meta tags, sitemap, robots.txt and structured content. Optimized page performance and accessibility for better search ranking. Achieved first-page Google rankings for multiple developer-related keywords, including top position for select search queries. Serves as primary client acquisition and credibility platform.',
+    link: 'https://portfolio-next-eight-rose.vercel.app/',
+    teamSize: '1',
+  },
+  {
+    title: 'Sheetal Academy, Uran (Navi Mumbai) – Business Website & SEO Implementation',
+    date: '28 Jul, 2025 – 03 Aug, 2025',
+    tech: 'Next.js, Tailwind CSS, MongoDB, JWT Authentication, EmailJS, Responsive Web Design, SEO Optimization, Deployment, Performance Optimization',
+    desc: 'Developed and deployed a production website and admin dashboard using Next.js and MongoDB for a live coaching institute. Built secure authentication and dynamic content management for announcements, jobs and events. Implemented form handling and lead capture workflows with automated responses. Optimized technical SEO and site structure, achieving first-page Google rankings for relevant institute search queries including top position for specific keywords. Hosted on Vercel with responsive UI and performance optimization for mobile users.',
     link: 'https://sheetal-academy.vercel.app/',
     teamSize: '1',
   },
   {
-    title: 'SISTec Alumni Portal',
+    title: 'SISTec Alumni Networking Platform – Real-Time Web Application',
     mentor: 'Prof. Nargish Gupta',
     teamSize: '4',
-    tech: 'MongoDB, Express.js, React.js, Node.js, Socket.io',
-    desc: 'Full-stack social platform for SISTec students, alumni, and admins with posts, forums, events, real-time messaging, and job opportunities.',
+    tech: 'MongoDB, Express.js, React.js, Node.js, Socket.io, Deployment',
+    desc: 'Led development of a full-stack networking platform for students and alumni with real-time messaging using Socket.io. Architected MongoDB schema for conversations and optimized message retrieval queries. Implemented authentication, protected routes and role-based dashboards (admin/user). Resolved real-time chat event conflicts and managed persistent user sessions. Coordinated frontend–backend integration and guided feature implementation across the team. Deployed on institute subdomain with active users for posts, messaging, and event interaction.',
     link: 'http://alumni.sistec.ac.in/',
   },
   {
-    title: 'AI-Based Museum Ticket Booking System',
+    title: 'AI-Based Museum Ticket Booking Automation System',
     mentor: 'Dr. Bhavna Gupta',
     teamSize: '6',
     tech: 'Python, Streamlit, MonsterAPI',
-    desc: 'Intelligent chatbot that automated the entire ticket booking workflow with structured user input capture, automated pricing, and ticket generation.',
-    link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx',
+    desc: 'Built an intelligent chatbot that automated the entire ticket booking workflow. Integrated chat and booking flow, reducing multiple manual steps into a single automated pipeline. Implemented structured user input capture, automated pricing, and ticket generation.',
+    link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx?usp=drive_link',
   },
   {
     title: 'Java Data Structures Desktop Application',
     teamSize: '1',
     tech: 'Java, Java Swing, OOP, DSA',
-    desc: 'Interactive desktop application with GUI-based menu system for performing operations on core data structures with visualization, error handling, and state persistence.',
+    desc: 'Interactive desktop application with a GUI-based menu system for performing operations on core data structures (Array, Stack, Queue, Linked List, Tree, Graph). Includes dynamic visualization, error handling, input validation, and local file-based state persistence. Built in Eclipse.',
   },
   {
     title: 'Menu-Driven Data Structures Library',
     mentor: 'Dr. Nargish Gupta',
     teamSize: '1',
     tech: 'C++, DSA',
-    desc: 'Console-based application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface.',
+    desc: 'Console-based C++ application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface. Each module supports insertion, deletion, traversal, and search. Focused on modular coding and dynamic memory management.',
     link: 'https://onlinegdb.com/Gvhd1l31a',
   },
 ];

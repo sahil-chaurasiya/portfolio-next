@@ -1,4 +1,15 @@
 'use client';
+// SEO NOTE: Export this metadata from your /about/page.js (server component):
+// export const metadata = {
+//   title: 'About Sahil Chaurasiya – Full-Stack Developer from Bhopal',
+//   description: 'Sahil Chaurasiya is a Full-Stack Developer from Bhopal, India. Completed internship at Shroti Telecom. Skilled in Next.js, Django, FastAPI, Node.js, and MongoDB.',
+//   alternates: { canonical: 'https://portfolio-next-eight-rose.vercel.app/about' },
+//   openGraph: {
+//     title: 'About Sahil Chaurasiya – Full-Stack Developer',
+//     description: 'Full-Stack Developer from Bhopal, India. Next.js, Django, React, Node.js.',
+//     url: 'https://portfolio-next-eight-rose.vercel.app/about',
+//   },
+// };
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
@@ -36,7 +47,10 @@ function FadeInSection({ children, delay = 0 }) {
 
 export default function About() {
   return (
-    <main className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-32 overflow-hidden">
+    <main
+      className="relative min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-8 pt-32 pb-32 overflow-hidden"
+      aria-label="About Sahil Chaurasiya – Full-Stack Developer"
+    >
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 z-0">
         {/* Top Glow */}
@@ -102,16 +116,30 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
-            style={{ fontFamily: "'Pacifico', cursive" , lineHeight: '1.2',
-                display: 'inline-block',
-                paddingBottom: '0.3em',
-                marginBottom: '-0.2em'}}
-            
-          >
-            🪄 Who&apos;s Crafting This?
-          </h1>
+          <motion.h1
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white text-center"
+>
+  {/* Hidden for visual users: SEO-friendly full text */}
+  <span style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
+    About Sahil Chaurasiya – Full-Stack Developer from Bhopal
+  </span>
+
+  {/* Visible styled gradient & emoji */}
+  <span
+    className="block mt-2 sm:inline bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
+    style={{
+      fontFamily: 'var(--font-pacifico), cursive',
+      lineHeight: '1.2',
+      paddingBottom: '0.3em',
+      marginBottom: '-0.2em'
+    }}
+  >
+    🪄 Who&apos;s crafting this?
+  </span>
+</motion.h1>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -151,9 +179,8 @@ export default function About() {
               <div className="relative p-8 bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl">
                 <div className="absolute top-4 left-4 text-4xl opacity-20">💼</div>
                 <p className="text-base sm:text-lg leading-relaxed text-gray-200">
-                  Currently, I&apos;m working as a <strong className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent font-bold">Software Developer Intern at Shroti Telecom</strong>, where I primarily work with
-                  <strong className="text-white"> Django</strong> to build and maintain backend systems, APIs, and data-driven workflows. This experience has helped
-                  me understand production-level backend development, real-world data handling, and scalable system design.
+                  I completed a <strong className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent font-bold">Junior Software Developer internship at Shroti Telecom Pvt. Ltd.</strong> (Aug 2025 – Jan 2026), where I worked with
+                  <strong className="text-white"> Django</strong> and <strong className="text-white">FastAPI</strong> to build and maintain REST APIs, implement authentication and role-based access control, optimize database queries, and debug production-level integration issues. I was awarded the <strong className="text-white">Best Intern Award</strong> for my contributions.
                 </p>
               </div>
             </div>
@@ -179,12 +206,13 @@ export default function About() {
               <div className="relative p-8 bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl">
                 <div className="absolute top-4 left-4 text-4xl opacity-20">🎯</div>
                 <p className="text-base sm:text-lg leading-relaxed text-gray-200">
-                  I&apos;ve built and deployed multiple real-world projects including a full-stack
-                  <a href="http://alumni.sistec.ac.in" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all ml-1">Alumni Networking Platform</a>,
-                  the production-ready
+                  I&apos;ve built and deployed multiple real-world projects — including a full-stack
+                  <a href="http://alumni.sistec.ac.in" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all mx-1">Alumni Networking Platform</a>
+                  with real-time messaging, the production-ready
                   <a href="https://sheetal-academy.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all mx-1">Sheetal Academy Website</a>
-                  built using Next.js with admin dashboard, JWT authentication, MongoDB Atlas integration, and SEO optimization,
-                  and an AI-powered Museum Ticket Booking Automation system.
+                  with admin dashboard, JWT authentication, and SEO achieving first-page Google rankings, a
+                  <a href="https://portfolio-next-eight-rose.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all mx-1">SEO-optimized developer portfolio</a>
+                  also ranking on the first page of Google, and an AI-powered Museum Ticket Booking Automation system.
                   I also work with databases like <strong className="text-white">PostgreSQL</strong>, <strong className="text-white">MySQL</strong>, and tools such as
                   <strong className="text-white"> Socket.io</strong>, <strong className="text-white">Git</strong>, and <strong className="text-white">Linux</strong>.
                 </p>
@@ -201,7 +229,8 @@ export default function About() {
                   I actively solve problems on competitive platforms like
                   <a href="https://www.codechef.com/users/sahil73" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all mx-1">CodeChef</a> and
                   <a href="https://www.hackerrank.com/profile/chaurasiyasahil1" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-300 transition-all mx-1">HackerRank</a>,
-                  hold certifications in Java, SQL, and Python, and have participated in national-level hackathons including
+                  hold certifications in Java, SQL, and Python from HackerRank, NPTEL, and Google (Coursera), secured
+                  <strong className="text-white"> First Position in Number Games Season 4</strong> at SISTec, and have participated in national-level hackathons including
                   <strong className="text-white"> Smart India Hackathon</strong>.
                 </p>
               </div>
