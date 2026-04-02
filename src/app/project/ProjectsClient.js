@@ -142,6 +142,24 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   const projects = [
     {
+      title: 'PersonalOS – Personal Life & Career Operating System',
+      date: '2025',
+      description:
+        'A premium, full-stack personal dashboard that combines productivity, career management, learning, and personal growth into one intelligent system. Features a Command Center Dashboard, Task System, Project OS, Habit Intelligence, Idea Vault, Job Application CRM, Learning Tracker, Daily Journal, and Activity Timeline — all in one unified platform.',
+      tech: ['Next.js 14', 'React 18', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
+      link: 'https://github.com/sahil-chaurasiya/sahilos',
+      featured: true,
+      teamSize: '1',
+      highlights: [
+        '9 integrated modules: Tasks, Projects, Habits, Ideas, Jobs, Learning, Journal, Dashboard & Activity',
+        'Habit Intelligence with streak tracking, 90-day heatmap, and daily check-ins',
+        'Job Application CRM with Kanban pipeline (Saved → Applied → Interview → Offer → Rejected)',
+        'Daily Journal with autosave, mood tracking, and date navigation',
+        '30-second server-side dashboard cache per user for fast aggregated reads',
+        'Soft deletes across all models — data is never permanently lost',
+      ],
+    },
+    {
       title: 'Personal Developer Portfolio (SEO Optimized)',
       date: '06 Nov, 2025 – 20 Nov, 2025',
       description:
