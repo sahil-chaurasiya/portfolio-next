@@ -147,7 +147,7 @@ export default function Projects() {
       description:
         'A premium, full-stack personal dashboard that combines productivity, career management, learning, and personal growth into one intelligent system. Features a Command Center Dashboard, Task System, Project OS, Habit Intelligence, Idea Vault, Job Application CRM, Learning Tracker, Daily Journal, and Activity Timeline — all in one unified platform.',
       tech: ['Next.js 14', 'React 18', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
-      link: 'https://github.com/sahil-chaurasiya/sahilos',
+      link: 'https://sahilos.vercel.app/dashboard',
       featured: true,
       teamSize: '1',
       highlights: [
