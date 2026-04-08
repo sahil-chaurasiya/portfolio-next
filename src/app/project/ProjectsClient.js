@@ -142,21 +142,67 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   const projects = [
     {
-      title: 'PersonalOS – Personal Life & Career Operating System',
-      date: '2025',
+      title: 'ToFly Media – Digital Marketing Agency Website',
+      date: '01 Apr, 2026 – 08 Apr, 2026',
       description:
-        'A premium, full-stack personal dashboard that combines productivity, career management, learning, and personal growth into one intelligent system. Features a Command Center Dashboard, Task System, Project OS, Habit Intelligence, Idea Vault, Job Application CRM, Learning Tracker, Daily Journal, and Activity Timeline — all in one unified platform.',
-      tech: ['Next.js 14', 'React 18', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
-      link: 'https://sahilos.vercel.app/dashboard',
+        'Developed a full-stack business website and CMS platform for a digital marketing agency. Implemented blog management, service pages, case studies, and lead capture workflows integrated with an admin dashboard. Built animated responsive UI components and SEO-ready architecture to support marketing and client acquisition operations.',
+      tech: ['ReactJS', 'NodeJS', 'Express.js', 'Tailwind CSS', 'JWT'],
+      link: 'https://toflymediaa.com/',
       featured: true,
       teamSize: '1',
       highlights: [
-        '9 integrated modules: Tasks, Projects, Habits, Ideas, Jobs, Learning, Journal, Dashboard & Activity',
-        'Habit Intelligence with streak tracking, 90-day heatmap, and daily check-ins',
+        'Full-stack CMS with blog management, service pages, and case studies',
+        'Lead capture workflows integrated with admin dashboard',
+        'Animated responsive UI components',
+        'SEO-ready architecture for marketing and client acquisition',
+      ],
+    },
+    {
+      title: 'PersonalOS – Life & Career Operating System',
+      date: '01 Mar, 2026 – 08 Apr, 2026',
+      description:
+        'A premium, full-stack productivity platform integrating multiple personal management modules including Habit Intelligence, Job Application CRM, Daily Journal, and Activity Timeline. Implemented server-side caching, soft-delete architecture for data recovery, and analytics-driven habit tracking with a 90-day heatmap visualization.',
+      tech: ['Next.js', 'React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT', 'Groq AI'],
+      link: 'http://sahilos.vercel.app',
+      featured: true,
+      teamSize: '1',
+      highlights: [
+        'Multiple integrated modules: Habit Intelligence, Job CRM, Daily Journal, Activity Timeline',
+        'Habit tracking with 90-day heatmap visualization and streak analytics',
         'Job Application CRM with Kanban pipeline (Saved → Applied → Interview → Offer → Rejected)',
-        'Daily Journal with autosave, mood tracking, and date navigation',
-        '30-second server-side dashboard cache per user for fast aggregated reads',
-        'Soft deletes across all models — data is never permanently lost',
+        'Server-side caching and soft-delete architecture for data recovery',
+      ],
+    },
+    {
+      title: 'Office Attendance PWA',
+      date: '01 Apr, 2026 – 05 Apr, 2026',
+      description:
+        'Developed a Progressive Web Application for GPS-based office attendance tracking replacing manual check-ins. Implemented location verification using the Haversine formula with geofencing constraints, automated late detection, and scheduled auto-checkout using cron jobs. Designed admin dashboards with live activity feeds, reporting tools, and CSV export functionality.',
+      tech: ['ReactJS', 'NodeJS', 'Express.JS', 'PWA', 'JWT', 'Recharts'],
+      link: 'https://attendance.toflymediaa.com/',
+      featured: true,
+      teamSize: '1',
+      highlights: [
+        'GPS-based attendance with Haversine formula and geofencing constraints',
+        'Automated late detection and scheduled auto-checkout via cron jobs',
+        'Admin dashboard with live activity feeds and reporting tools',
+        'CSV export functionality for attendance records',
+      ],
+    },
+    {
+      title: 'Academy Assistant – AI-Powered Admin Panel',
+      date: '01 Feb, 2026 – 25 Feb, 2026',
+      description:
+        'Built a full-stack AI-powered administration platform for spoken English academies enabling student progress tracking, roadmap management, and performance analysis. Integrated a context-aware AI assistant capable of retrieving academy-wide student data including notes, ratings, and learning progress.',
+      tech: ['Next.js', 'NodeJS', 'Express.js', 'MongoDB', 'Groq AI', 'Tailwind CSS', 'JWT'],
+      link: 'https://academy-assistant.vercel.app/',
+      featured: true,
+      teamSize: '1',
+      highlights: [
+        'Context-aware AI assistant retrieving academy-wide student data',
+        'Student progress tracking with roadmap management and performance analysis',
+        'Bulk operations and attendance tracking',
+        'Structured analytics dashboards to improve administrative efficiency',
       ],
     },
     {
@@ -176,19 +222,19 @@ export default function Projects() {
       ],
     },
     {
-      title: 'Sheetal Academy, Uran (Navi Mumbai) – Business Website & SEO Implementation',
+      title: 'Sheetal Academy – Business Website & SEO Implementation',
       date: '28 Jul, 2025 – 03 Aug, 2025',
       description:
         'Developed and deployed a production website and admin dashboard using Next.js and MongoDB for a live coaching institute. Built secure authentication and dynamic content management for announcements, jobs, and events. Implemented form handling and lead capture workflows with automated responses.',
       tech: ['Next.js', 'Tailwind CSS', 'MongoDB', 'JWT', 'EmailJS', 'SEO Optimization', 'Vercel'],
       link: 'https://sheetal-academy.vercel.app/',
-      featured: true,
+      featured: false,
       teamSize: '1',
       highlights: [
         'Admin dashboard with JWT authentication and dynamic content management',
         'Form handling and lead capture with automated email responses',
-        'Achieved first-page Google rankings for institute search queries including top position for specific keywords',
-        'Hosted on Vercel with responsive UI and performance optimization for mobile users',
+        'Achieved first-page Google rankings for institute search queries',
+        'Hosted on Vercel with responsive UI and mobile performance optimization',
       ],
     },
     {
@@ -196,15 +242,15 @@ export default function Projects() {
       mentor: 'Prof. Nargish Gupta',
       teamSize: '4',
       description:
-        'Led development of a full-stack networking platform for SISTec students, alumni, and admins with dedicated sections for posts, discussion forums, events, real-time messaging, and job opportunities. Enables seamless campus communication, alumni interaction, and event engagement.',
+        'Led development of a full-stack networking platform for SISTec students, alumni, and admins with dedicated sections for posts, discussion forums, events, real-time messaging, and job opportunities. Deployed on the official institute subdomain and actively used by students and alumni.',
       tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'Deployment'],
       link: 'http://alumni.sistec.ac.in/',
-      featured: true,
+      featured: false,
       highlights: [
         'Architected MongoDB schema for conversations and optimized message retrieval queries',
         'Implemented authentication, protected routes, and role-based dashboards (admin/user)',
         'Resolved real-time chat event conflicts and managed persistent user sessions',
-        'Coordinated frontend–backend integration and deployed on official institute subdomain',
+        'Deployed on official institute subdomain with live user activity',
       ],
     },
     {
@@ -215,40 +261,12 @@ export default function Projects() {
         'Built an intelligent chatbot that automated the entire ticket booking workflow. Integrated chat and booking flow, reducing multiple manual steps into a single automated pipeline. Implemented structured user input capture, automated pricing, and ticket generation.',
       tech: ['Python', 'Streamlit', 'MonsterAPI'],
       link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx?usp=drive_link',
+      featured: false,
       highlights: [
         'Single interface combining chat and booking flow',
         'Automated pricing calculation and ticket generation',
         'Structured user input capture pipeline',
         'Significantly reduced manual booking steps',
-      ],
-    },
-    {
-      title: 'Java Data Structures Desktop Application',
-      teamSize: '1',
-      description:
-        'Designed and developed an interactive desktop application in Java with a GUI-based menu system for performing operations on core data structures (Array, Stack, Queue, Linked List, Tree, Graph). Implemented insertion, deletion, traversal, and search using OOP principles with dynamic visualization.',
-      tech: ['Java', 'Java Swing', 'OOP', 'DSA'],
-      link: '#',
-      highlights: [
-        'GUI-based dynamic visualization of data structure operations',
-        'Error handling and input validation throughout',
-        'Local file-based state persistence',
-        'Built and executed entirely using Eclipse IDE',
-      ],
-    },
-    {
-      title: 'Menu-Driven Data Structures Library',
-      mentor: 'Dr. Nargish Gupta',
-      teamSize: '1',
-      description:
-        'Developed a C++ console-based application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface. Each module supports insertion, deletion, traversal, and search operations. Focused on modular coding and dynamic memory management.',
-      tech: ['C++', 'DSA'],
-      link: 'https://onlinegdb.com/Gvhd1l31a',
-      highlights: [
-        'Modular coding structure across all data structure modules',
-        'Dynamic memory management',
-        'Complete CRUD operations per module',
-        'Console-based interactive interface',
       ],
     },
   ];
