@@ -78,11 +78,10 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-xl sm:max-w-2xl text-sm sm:text-base md:text-lg font-normal text-neutral-300 px-2"
         >
-          I&apos;m a <strong className="text-white">Full-Stack Web Developer</strong> from Bhopal, India, passionate about
-          building clean, functional, and scalable web applications. I specialize in{" "}
-          <strong className="text-white">frontend</strong> and{" "}
-          <strong className="text-white">backend development</strong> using{" "}
-          <strong className="text-cyan-400">Next.js, React, Node.js, Express, Django, FastAPI, PostgreSQL, MySQL and MongoDB</strong>.
+          I&apos;m a <strong className="text-white">Full-Stack Developer</strong> from Bhopal, India — currently building
+          production systems at <strong className="text-cyan-400">ToFly Media</strong> as their first software developer hire. I specialize in{" "}
+          <strong className="text-white">full-stack development</strong> using{" "}
+          <strong className="text-cyan-400">Next.js, React, Node.js, Express, MongoDB, and Django</strong>.
         </motion.p>
 
         <motion.p
@@ -91,8 +90,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="mx-auto mt-4 max-w-xl sm:max-w-2xl text-xs sm:text-sm md:text-base text-neutral-400 px-2"
         >
-          Explore my projects, resume, and developer journey — crafted with a focus
-          on performance, SEO best practices, and modern UI/UX design.
+          From SaaS client portals to GPS attendance systems — I ship real products end-to-end, from architecture to deployment.
         </motion.p>
 
         {/* Quick stats */}
@@ -105,16 +103,16 @@ export default function Home() {
         >
           <div
             className="px-4 py-2 bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 rounded-full backdrop-blur-sm"
-            title="6+ Projects built"
+            title="9+ Projects built"
           >
-            <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="6 plus projects">6+</div>
+            <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="9 plus projects">9+</div>
             <div className="text-xs text-gray-400">Projects</div>
           </div>
           <div
             className="px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full backdrop-blur-sm"
-            title="18+ Technologies mastered"
+            title="14+ Technologies mastered"
           >
-            <div className="text-lg sm:text-xl font-bold text-cyan-400" aria-label="18 plus technologies">18+</div>
+            <div className="text-lg sm:text-xl font-bold text-cyan-400" aria-label="14 plus technologies">14+</div>
             <div className="text-xs text-gray-400">Technologies</div>
           </div>
           <div

@@ -14,7 +14,7 @@ const mainProjects = [
     title: 'ToFly Media',
     subtitle: 'Digital Marketing Agency Website',
     date: 'Apr 2026',
-    status: 'ongoing',
+    status: 'complete',
     description:
       'Full-stack business website & CMS for a digital marketing agency. Blog management, service pages, case studies, and lead capture workflows integrated with an admin dashboard.',
     tech: ['ReactJS', 'NodeJS', 'Express.js', 'Tailwind CSS', 'JWT'],
@@ -28,11 +28,12 @@ const mainProjects = [
     title: 'PersonalOS',
     subtitle: 'Life & Career Operating System',
     date: 'Mar – Apr 2026',
-    status: 'ongoing',
+    status: 'complete',
     description:
       'Premium productivity platform: Habit Intelligence, Job Application CRM, Daily Journal, and Activity Timeline. 90-day heatmap, Kanban pipeline, server-side caching.',
     tech: ['Next.js', 'React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Groq AI'],
-    link: 'http://sahilos.vercel.app',
+    link: 'https://sahilos.vercel.app/',
+    github: 'https://github.com/sahil-chaurasiya/sahilos.git',
     featured: true,
     accentColor: '#0ea5e9',
     number: '02',
@@ -46,7 +47,7 @@ const mainProjects = [
     description:
       'Full-stack SaaS-style client portal for performance marketing agencies. Clients track campaigns, view reports, chat in real-time, and submit requests. RBAC with Admin, Manager, Team Member, and Client roles.',
     tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Zustand', 'JWT'],
-    link: '#',
+    link: 'https://flowdesk-drab.vercel.app/',
     featured: true,
     accentColor: '#10b981',
     number: '03',
@@ -56,7 +57,7 @@ const mainProjects = [
     title: 'Office Attendance PWA',
     subtitle: 'GPS-Based Attendance Tracking',
     date: 'Apr 2026',
-    status: 'ongoing',
+    status: 'complete',
     description:
       'Progressive Web App replacing manual check-ins with GPS-based attendance. Haversine geofencing, automated late detection, cron-job auto-checkout, admin dashboards with CSV export.',
     tech: ['ReactJS', 'NodeJS', 'Express.JS', 'PWA', 'JWT', 'Recharts'],
@@ -64,20 +65,6 @@ const mainProjects = [
     featured: true,
     accentColor: '#f59e0b',
     number: '04',
-  },
-  {
-    id: 'academy',
-    title: 'Academy Assistant',
-    subtitle: 'AI-Powered Admin Panel',
-    date: 'Feb 2026',
-    status: 'ongoing',
-    description:
-      'Full-stack AI administration platform for spoken English academies. Context-aware AI assistant retrieves student notes, ratings, and learning progress across the entire academy.',
-    tech: ['Next.js', 'NodeJS', 'Express.js', 'MongoDB', 'Groq AI', 'Tailwind CSS', 'JWT'],
-    link: 'https://academy-assistant.vercel.app/',
-    featured: true,
-    accentColor: '#e11d48',
-    number: '05',
   },
   {
     id: 'arrk',
@@ -91,11 +78,11 @@ const mainProjects = [
     link: '#',
     featured: false,
     accentColor: '#8b5cf6',
-    number: '06',
+    number: '05',
   },
   {
     id: 'ritu',
-    title: 'Zorka Shop',
+    title: 'Ritu Ghai Couture',
     subtitle: 'Dynamic Full-Stack E-Commerce',
     date: '2025',
     status: 'ongoing',
@@ -105,71 +92,83 @@ const mainProjects = [
     link: '#',
     featured: false,
     accentColor: '#f97316',
-    number: '07',
+    number: '06',
   },
   {
     id: 'portfolio',
     title: 'Developer Portfolio',
     subtitle: 'SEO-Optimized Personal Site',
     date: 'Nov 2025',
-    status: 'ongoing',
+    status: 'complete',
     description:
       'Personal developer portfolio with first-page Google rankings for multiple developer-related keywords. Sitemap, robots.txt, structured meta tags, and full performance optimization.',
     tech: ['Next.js', 'Technical SEO', 'Performance Optimization', 'Vercel'],
-    link: 'https://portfolio-next-eight-rose.vercel.app/',
-    featured: false,
+    link: 'https://sahilchaurasiya.me/',
+    featured: true,
     accentColor: '#06b6d4',
-    number: '08',
+    number: '07',
   },
   {
     id: 'sheetal',
     title: 'Sheetal Academy',
     subtitle: 'Business Website & SEO',
     date: 'Jul – Aug 2025',
-    status: 'ongoing',
+    status: 'complete',
     description:
       'Production website and admin dashboard for a live coaching institute. JWT authentication, dynamic content management, lead capture with automated email responses, and first-page Google rankings.',
     tech: ['Next.js', 'Tailwind CSS', 'MongoDB', 'JWT', 'EmailJS', 'SEO Optimization', 'Vercel'],
     link: 'https://sheetal-academy.vercel.app/',
-    featured: false,
+    featured: true,
     accentColor: '#84cc16',
-    number: '09',
+    number: '08',
   },
   {
     id: 'sistec',
     title: 'SISTec Alumni Platform',
     subtitle: 'Real-Time Networking Web App',
     date: '2024',
-    status: 'ongoing',
+    status: 'complete',
     mentor: 'Prof. Nargish Gupta',
     teamSize: '4',
     description:
       'Full-stack networking platform for SISTec students, alumni, and admins. Real-time messaging, discussion forums, events, job listings. Deployed on the official institute subdomain.',
     tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io'],
-    link: 'http://alumni.sistec.ac.in/',
-    featured: false,
+    link: 'https://alumni.sistec.ac.in/',
+    featured: true,
     accentColor: '#a78bfa',
-    number: '10',
+    number: '09',
+  },
+];
+
+const experimentsProjects = [
+  {
+    id: 'academy',
+    title: 'Academy Assistant',
+    subtitle: 'AI-Powered Admin Panel',
+    date: 'Feb 2026',
+    status: 'complete',
+    description:
+      'Full-stack AI administration platform for spoken English academies. Context-aware AI assistant retrieves student notes, ratings, and learning progress across the entire academy.',
+    tech: ['Next.js', 'NodeJS', 'Express.js', 'MongoDB', 'Groq AI', 'Tailwind CSS', 'JWT'],
+    link: 'https://academy-assistant.vercel.app/',
+    accentColor: '#e11d48',
+    emoji: '🤖',
   },
   {
     id: 'museum',
     title: 'AI Museum Ticket Bot',
     subtitle: 'Booking Automation System',
     date: '2024',
-    status: 'ongoing',
+    status: 'complete',
     mentor: 'Dr. Bhavna Gupta',
     teamSize: '6',
     description:
       'Intelligent chatbot automating the entire ticket booking workflow. Automated pricing, ticket generation, and structured user input capture.',
     tech: ['Python', 'Streamlit', 'MonsterAPI'],
     link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx?usp=drive_link',
-    featured: false,
     accentColor: '#fb923c',
-    number: '11',
+    emoji: '🎟️',
   },
-];
-
-const funProjects = [
   {
     id: 'excuse',
     title: 'Excuse Generator Pro Max',
@@ -281,33 +280,48 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
 
-        {project.link && project.link !== '#' ? (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/link w-fit"
-            style={{ color: project.accentColor }}
-          >
-            <span>View Project</span>
-            <svg
-              className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        <div className="flex items-center gap-3">
+          {project.link && project.link !== '#' ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/link w-fit"
+              style={{ color: project.accentColor }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        ) : (
-          <span className="text-xs text-gray-600 italic">Private / In Progress</span>
-        )}
+              <span>View Project</span>
+              <svg
+                className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          ) : (
+            <span className="text-xs text-gray-600 italic">Private / In Progress</span>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-300 transition-colors duration-200"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
 }
 
-function FunCard({ project }) {
+function ExperimentCard({ project, index }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [hovered, setHovered] = useState(false);
@@ -317,7 +331,7 @@ function FunCard({ project }) {
       ref={ref}
       initial={{ opacity: 0, scale: 0.96 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative rounded-2xl border border-white/8 bg-[#0d0d0d] overflow-hidden"
@@ -338,13 +352,18 @@ function FunCard({ project }) {
           {project.emoji}
         </div>
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-1">
+          <div className="flex items-center gap-3 mb-1 flex-wrap">
             <h3 className="text-base font-bold text-white">{project.title}</h3>
             <StatusBadge status={project.status} />
           </div>
-          <p className="text-sm text-gray-500 mb-3">{project.subtitle}</p>
+          <p className="text-sm text-gray-500 mb-1">{project.subtitle}</p>
+          <div className="flex items-center gap-3 text-xs text-gray-600 mb-3">
+            <span>{project.date}</span>
+            {project.teamSize && <><span>·</span><span>Team of {project.teamSize}</span></>}
+            {project.mentor && <><span>·</span><span>Mentor: {project.mentor}</span></>}
+          </div>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1.5 mb-3">
             {project.tech.map((t, i) => (
               <span
                 key={i}
@@ -354,6 +373,20 @@ function FunCard({ project }) {
               </span>
             ))}
           </div>
+          {project.link && project.link !== '#' && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-200"
+              style={{ color: project.accentColor }}
+            >
+              <span>View Project</span>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
@@ -361,7 +394,6 @@ function FunCard({ project }) {
 }
 
 export default function Projects() {
-  const totalTech = new Set(mainProjects.flatMap((p) => p.tech)).size;
 
   return (
     <main
@@ -427,7 +459,7 @@ export default function Projects() {
           {[
             { value: mainProjects.length, label: 'Projects' },
             { value: mainProjects.filter((p) => p.featured).length, label: 'Featured' },
-            { value: `${totalTech}+`, label: 'Technologies' },
+            { value: '14+', label: 'Technologies' },
             { value: mainProjects.filter((p) => p.status === 'ongoing').length, label: 'Ongoing' },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col">
@@ -453,7 +485,7 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Fun & Experiments */}
+        {/* Experiments & Side Projects */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -463,17 +495,17 @@ export default function Projects() {
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
             <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/4">
-              <span className="text-base">🎲</span>
-              <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase">Fun &amp; Experiments</span>
+              <span className="text-base">🧪</span>
+              <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase">Experiments</span>
             </div>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           </div>
           <p className="text-sm text-gray-600 text-center mb-8">
-            Side projects built for fun, learning, and absolutely no legitimate reason.
+            Side builds, AI explorations, and things made for learning — or absolutely no legitimate reason.
           </p>
-          <div className="max-w-2xl mx-auto">
-            {funProjects.map((p) => (
-              <FunCard key={p.id} project={p} />
+          <div className="max-w-3xl mx-auto flex flex-col gap-4">
+            {experimentsProjects.map((p, i) => (
+              <ExperimentCard key={p.id} project={p} index={i} />
             ))}
           </div>
         </motion.div>

@@ -309,42 +309,83 @@ export default function ResumePage() {
             {/* Brief Summary */}
             <Section title="Brief Summary" icon="🧠">
               <p className="text-gray-300 text-lg leading-relaxed">
-                Full-stack developer experienced in building and deploying <strong className="text-white">production-ready web applications</strong> using <strong className="text-white">Node.js</strong>, <strong className="text-white">Django</strong>, and <strong className="text-white">Next.js</strong>. 
-                Developed a live campus networking platform with real-time messaging, role-based access control, and optimized database queries. 
-                Skilled in <strong className="text-white">automation workflows</strong>, <strong className="text-white">chatbots</strong>, <strong className="text-white">backend development</strong>, <strong className="text-white">APIs</strong>, and <strong className="text-white">data handling</strong>.
-                Comfortable debugging APIs, working with existing codebases, and shipping features in collaborative environments.
+                Full-stack developer currently working at <strong className="text-white">ToFly Media</strong> as their first software developer hire — responsible for building and shipping production-grade systems end-to-end. Experienced in <strong className="text-white">Node.js</strong>, <strong className="text-white">React</strong>, <strong className="text-white">Next.js</strong>, and <strong className="text-white">MongoDB</strong>, with prior internship experience using <strong className="text-white">Django</strong> and <strong className="text-white">FastAPI</strong>.
+                Skilled in <strong className="text-white">RBAC</strong>, <strong className="text-white">real-time systems</strong>, <strong className="text-white">REST APIs</strong>, <strong className="text-white">admin panels</strong>, and <strong className="text-white">third-party integrations</strong>.
+                Comfortable owning complete features from architecture to deployment in a fast-moving environment.
               </p>
             </Section>
 
-            {/* Internship */}
-            <Section title="Internship" icon="💼">
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
-                <div className="relative bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shrink-0">
-                      <FaBriefcase className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="w-full">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-                        <h3 className="text-xl font-bold text-white">Junior Software Developer</h3>
-                        <span className="text-xs text-gray-500 font-mono">22 Aug, 2025 – 22 Jan, 2026</span>
+            {/* Experience */}
+            <Section title="Experience" icon="💼">
+              <div className="space-y-6">
+                {/* ToFly Media */}
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 shrink-0">
+                        <FaBriefcase className="w-6 h-6 text-white" />
                       </div>
-                      <p className="text-cyan-400 font-medium mb-3">Shroti Telecom Pvt. Ltd.</p>
-                      <ul className="space-y-2 text-gray-300 text-sm leading-relaxed list-none">
-                        {[
-                          'Developed and maintained REST APIs using Django and FastAPI for internal and client-facing applications.',
-                          'Implemented authentication, authorization, and role-based access control for secure data handling.',
-                          'Debugged API responses and fixed integration issues affecting frontend workflows.',
-                          'Optimized database queries and improved response consistency.',
-                          'Worked on feature updates and bug fixes in an existing production codebase.',
-                        ].map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="w-full">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                          <div className="flex items-center gap-2">
+                            <h3 className="text-xl font-bold text-white">Software Developer</h3>
+                            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">Current</span>
+                          </div>
+                          <span className="text-xs text-gray-500 font-mono">Apr 2026 – Present</span>
+                        </div>
+                        <p className="text-violet-400 font-medium mb-1">ToFly Media · Full-time</p>
+                        <p className="text-xs text-gray-500 mb-3">Bhopal, Madhya Pradesh · On-site</p>
+                        <ul className="space-y-2 text-gray-300 text-sm leading-relaxed list-none">
+                          {[
+                            'First software developer hire — owning the full technical stack across client and internal projects.',
+                            'Building scalable MERN stack applications from architecture to production deployment.',
+                            'Designing secure backend systems with JWT authentication and role-based access control.',
+                            'Building admin panels, client portals, and internal tools for business workflows.',
+                            'Implementing third-party integrations including payments and real-time features.',
+                            'Collaborating directly with stakeholders to translate requirements into production-ready systems.',
+                          ].map((point, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-400 shrink-0"></span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Shroti Telecom */}
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shrink-0">
+                        <FaBriefcase className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="w-full">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                          <h3 className="text-xl font-bold text-white">Junior Software Developer</h3>
+                          <span className="text-xs text-gray-500 font-mono">Sep 2025 – Mar 2026</span>
+                        </div>
+                        <p className="text-cyan-400 font-medium mb-1">Shroti Telecom Pvt. Ltd. · Internship</p>
+                        <p className="text-xs text-gray-500 mb-3">Bhopal, Madhya Pradesh · On-site</p>
+                        <ul className="space-y-2 text-gray-300 text-sm leading-relaxed list-none">
+                          {[
+                            'Developed and maintained REST APIs using Django and FastAPI for internal and client-facing applications.',
+                            'Implemented authentication, authorization, and role-based access control for secure data handling.',
+                            'Debugged API responses and fixed integration issues affecting frontend workflows.',
+                            'Optimized database queries and improved response consistency.',
+                            'Worked on feature updates and bug fixes in an existing production codebase.',
+                          ].map((point, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -451,7 +492,7 @@ export default function ResumePage() {
               <div className="flex flex-wrap gap-3">
                 {[
                   { name: 'GitHub', url: 'https://github.com/sahil-chaurasiya', color: 'from-gray-800 to-black' },
-                  { name: 'Portfolio', url: 'https://portfolio-next-eight-rose.vercel.app/', color: 'from-violet-600 to-purple-600' },
+                  { name: 'Portfolio', url: 'https://sahilchaurasiya.me/', color: 'from-violet-600 to-purple-600' },
                   { name: 'CodeChef', url: 'https://www.codechef.com/users/sahil73', color: 'from-orange-600 to-red-600' },
                   { name: 'HackerRank', url: 'https://www.hackerrank.com/profile/chaurasiyasahil1', color: 'from-green-600 to-emerald-600' },
                   { name: 'HackerEarth', url: 'https://www.hackerearth.com/@chaurasiyasahil18/', color: 'from-blue-600 to-cyan-600' },
@@ -585,49 +626,51 @@ const SkillCategory = ({ category, skills }) => (
 
 const projects = [
   {
-    title: 'Personal Developer Portfolio (SEO Optimized)',
-    date: '06 Nov, 2025 – 20 Nov, 2025',
-    tech: 'Next.js, Technical SEO, Performance Optimization, Deployment, Responsive Web Design',
-    desc: 'Designed and developed a personal developer portfolio using Next.js. Implemented technical SEO including meta tags, sitemap, robots.txt and structured content. Optimized page performance and accessibility for better search ranking. Achieved first-page Google rankings for multiple developer-related keywords, including top position for select search queries. Serves as primary client acquisition and credibility platform.',
-    link: 'https://portfolio-next-eight-rose.vercel.app/',
+    title: 'Flowdesk – SaaS Client Portal',
+    date: '2026',
+    tech: 'React, Vite, Node.js, Express.js, MongoDB, Socket.io, Zustand, JWT, Tailwind CSS',
+    desc: 'Full-stack SaaS client portal for performance marketing agencies. Clients track campaigns, view reports, and chat in real time. RBAC with Admin, Manager, Team Member, and Client roles. Built at ToFly Media.',
+    link: 'https://flowdesk-drab.vercel.app/',
     teamSize: '1',
   },
   {
-    title: 'Sheetal Academy, Uran (Navi Mumbai) – Business Website & SEO Implementation',
-    date: '28 Jul, 2025 – 03 Aug, 2025',
-    tech: 'Next.js, Tailwind CSS, MongoDB, JWT Authentication, EmailJS, Responsive Web Design, SEO Optimization, Deployment, Performance Optimization',
-    desc: 'Developed and deployed a production website and admin dashboard using Next.js and MongoDB for a live coaching institute. Built secure authentication and dynamic content management for announcements, jobs and events. Implemented form handling and lead capture workflows with automated responses. Optimized technical SEO and site structure, achieving first-page Google rankings for relevant institute search queries including top position for specific keywords. Hosted on Vercel with responsive UI and performance optimization for mobile users.',
+    title: 'Office Attendance PWA – GPS-Based Tracking',
+    date: 'Apr 2026',
+    tech: 'ReactJS, NodeJS, Express.JS, PWA, JWT, Recharts',
+    desc: 'Progressive Web App replacing manual check-ins with GPS-based attendance. Haversine geofencing, automated late detection, cron-job auto-checkout, and admin dashboards with CSV export. Deployed at ToFly Media.',
+    link: 'https://attendance.toflymediaa.com/',
+    teamSize: '1',
+  },
+  {
+    title: 'Developer Portfolio (SEO Optimized)',
+    date: 'Nov 2025',
+    tech: 'Next.js, Technical SEO, Performance Optimization, Vercel',
+    desc: 'Personal developer portfolio with first-page Google rankings for multiple developer-related keywords. Implemented sitemap, robots.txt, structured meta tags, and full performance optimization.',
+    link: 'https://sahilchaurasiya.me/',
+    teamSize: '1',
+  },
+  {
+    title: 'Sheetal Academy – Business Website & SEO',
+    date: 'Jul – Aug 2025',
+    tech: 'Next.js, Tailwind CSS, MongoDB, JWT, EmailJS, SEO Optimization, Vercel',
+    desc: 'Production website and admin dashboard for a live coaching institute. JWT authentication, dynamic content management, lead capture with automated email responses, and first-page Google rankings.',
     link: 'https://sheetal-academy.vercel.app/',
     teamSize: '1',
   },
   {
-    title: 'SISTec Alumni Networking Platform – Real-Time Web Application',
+    title: 'SISTec Alumni Networking Platform',
     mentor: 'Prof. Nargish Gupta',
     teamSize: '4',
-    tech: 'MongoDB, Express.js, React.js, Node.js, Socket.io, Deployment',
-    desc: 'Led development of a full-stack networking platform for students and alumni with real-time messaging using Socket.io. Architected MongoDB schema for conversations and optimized message retrieval queries. Implemented authentication, protected routes and role-based dashboards (admin/user). Resolved real-time chat event conflicts and managed persistent user sessions. Coordinated frontend–backend integration and guided feature implementation across the team. Deployed on institute subdomain with active users for posts, messaging, and event interaction.',
-    link: 'http://alumni.sistec.ac.in/',
+    tech: 'MongoDB, Express.js, React.js, Node.js, Socket.io',
+    desc: 'Full-stack networking platform for SISTec students, alumni, and admins. Real-time messaging via Socket.io, discussion forums, events, and job listings. Deployed on the official institute subdomain.',
+    link: 'https://alumni.sistec.ac.in/',
   },
   {
-    title: 'AI-Based Museum Ticket Booking Automation System',
+    title: 'AI Museum Ticket Booking Automation',
     mentor: 'Dr. Bhavna Gupta',
     teamSize: '6',
     tech: 'Python, Streamlit, MonsterAPI',
-    desc: 'Built an intelligent chatbot that automated the entire ticket booking workflow. Integrated chat and booking flow, reducing multiple manual steps into a single automated pipeline. Implemented structured user input capture, automated pricing, and ticket generation.',
+    desc: 'Intelligent chatbot automating the entire ticket booking workflow. Automated pricing, ticket generation, and structured user input capture.',
     link: 'https://drive.google.com/drive/folders/1rKAP7_7-eeY-zJDn7uR2JqZKtF89MzVx?usp=drive_link',
-  },
-  {
-    title: 'Java Data Structures Desktop Application',
-    teamSize: '1',
-    tech: 'Java, Java Swing, OOP, DSA',
-    desc: 'Interactive desktop application with a GUI-based menu system for performing operations on core data structures (Array, Stack, Queue, Linked List, Tree, Graph). Includes dynamic visualization, error handling, input validation, and local file-based state persistence. Built in Eclipse.',
-  },
-  {
-    title: 'Menu-Driven Data Structures Library',
-    mentor: 'Dr. Nargish Gupta',
-    teamSize: '1',
-    tech: 'C++, DSA',
-    desc: 'Console-based C++ application implementing core data structures (Array, Stack, Queue, Linked List, Tree, Graph) with a menu-driven interface. Each module supports insertion, deletion, traversal, and search. Focused on modular coding and dynamic memory management.',
-    link: 'https://onlinegdb.com/Gvhd1l31a',
   },
 ];
