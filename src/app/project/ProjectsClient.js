@@ -142,6 +142,19 @@ const mainProjects = [
 
 const experimentsProjects = [
   {
+    id: 'word-duel',
+    title: 'Word Duel',
+    subtitle: 'Real-Time 1v1 Word Combat Game',
+    date: 'May 2026',
+    status: 'complete',
+    description:
+      'Real-time multiplayer word game where players battle by submitting valid words in a given category. Features bot modes (Easy/Medium/Hard), private rooms with shareable codes, energy-based special moves (Shield, Freeze, Critical), damage formula with rare-letter bonuses, and PWA support. Built with Next.js App Router + Pusher Channels.',
+    tech: ['Next.js', 'Pusher', 'PWA', 'App Router', 'Serverless API'],
+    link: '#',
+    accentColor: '#f59e0b',
+    emoji: '⚔️',
+  },
+  {
     id: 'academy',
     title: 'Academy Assistant',
     subtitle: 'AI-Powered Admin Panel',

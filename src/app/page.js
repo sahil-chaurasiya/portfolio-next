@@ -103,9 +103,9 @@ export default function Home() {
         >
           <div
             className="px-4 py-2 bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 rounded-full backdrop-blur-sm"
-            title="9+ Projects built"
+            title="10+ Projects built"
           >
-            <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="9 plus projects">9+</div>
+            <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="10 plus projects">10+</div>
             <div className="text-xs text-gray-400">Projects</div>
           </div>
           <div
