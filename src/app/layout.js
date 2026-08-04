@@ -286,6 +286,41 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "SoftwareApplication",
+        "name": "Flowdesk — SaaS Client Portal",
+        "url": "https://flowdesk-drab.vercel.app/",
+        "applicationCategory": "WebApplication",
+        "description": "Full-stack SaaS-style client portal for performance marketing agencies with real-time chat, campaign tracking, and role-based access control.",
+        "author": { "@id": "https://portfolio-next-eight-rose.vercel.app/#person" },
+        "programmingLanguage": ["JavaScript", "React", "Node.js", "Express.js", "MongoDB", "Socket.io"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "PersonalOS — Life & Career Operating System",
+        "url": "https://sahilos.vercel.app/",
+        "applicationCategory": "WebApplication",
+        "description": "Premium productivity platform with habit intelligence, a job application CRM, daily journaling, and an activity timeline. Built with Next.js and Groq AI.",
+        "author": { "@id": "https://portfolio-next-eight-rose.vercel.app/#person" },
+        "programmingLanguage": ["JavaScript", "Next.js", "Node.js", "MongoDB"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Bhopal Creators Summit",
+        "applicationCategory": "WebApplication",
+        "description": "MERN-stack event platform for the Bhopal Creators Summit with a public site and a full admin panel covering speakers, sponsors, workshops, competitions, and gallery content.",
+        "author": { "@id": "https://portfolio-next-eight-rose.vercel.app/#person" },
+        "programmingLanguage": ["JavaScript", "React", "Node.js", "Express.js", "MongoDB"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Aura by Anamika — Fashion E-Commerce Platform",
+        "url": "https://www.aurabyanamika.in/",
+        "applicationCategory": "WebApplication",
+        "description": "Full MERN-stack fashion e-commerce platform with a customer storefront, admin panel, and integrated Razorpay and Stripe payments.",
+        "author": { "@id": "https://portfolio-next-eight-rose.vercel.app/#person" },
+        "programmingLanguage": ["JavaScript", "React", "Redux", "Node.js", "Express.js", "MongoDB"]
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "Sheetal Academy – Business Website & SEO Implementation",
         "url": "https://sheetal-academy.vercel.app/",
         "applicationCategory": "WebApplication",

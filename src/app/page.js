@@ -1,218 +1,577 @@
 'use client';
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "./lib/utils";
 
 const Spotlight = dynamic(() => import("./components/ui/Spotlight").then(mod => mod.Spotlight), {
   ssr: false,
 });
 
+/* ─────────────────────────────────────────────
+   DATA — Featured projects shown on the homepage.
+   Full project list lives on /project.
+───────────────────────────────────────────── */
+const featuredProjects = [
+  {
+    id: 'flowdesk',
+    title: 'Flowdesk',
+    subtitle: 'SaaS Client Portal — ToFly Media',
+    description:
+      'Full-stack SaaS-style client portal for performance marketing agencies with real-time chat and role-based access control.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+    link: 'https://flowdesk-drab.vercel.app/',
+    accentColor: '#10b981',
+  },
+  {
+    id: 'personalos',
+    title: 'PersonalOS',
+    subtitle: 'Life & Career Operating System',
+    description:
+      'Premium productivity platform with habit intelligence, a job application CRM, daily journaling, and an activity timeline.',
+    tech: ['Next.js', 'Node.js', 'MongoDB', 'Groq AI'],
+    link: 'https://sahilos.vercel.app/',
+    accentColor: '#0ea5e9',
+  },
+  {
+    id: 'sistec',
+    title: 'SISTec Alumni Platform',
+    subtitle: 'Real-Time Networking Web App',
+    description:
+      'Full-stack networking platform for students, alumni, and admins with real-time messaging, forums, events, and job listings.',
+    tech: ['MongoDB', 'Express.js', 'React', 'Socket.io'],
+    link: 'https://alumni.sistec.ac.in/',
+    accentColor: '#a78bfa',
+  },
+  {
+    id: 'bhopal-creators-summit',
+    title: 'Bhopal Creators Summit',
+    subtitle: 'Event Platform with Full Admin CMS',
+    description:
+      'MERN event platform with a public site and a real admin panel covering 15 content types, roles, and a media library.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Cloudinary'],
+    link: '#',
+    accentColor: '#eab308',
+  },
+  {
+    id: 'aura-by-anamika',
+    title: 'Aura by Anamika',
+    subtitle: 'Premium Fashion E-Commerce Platform',
+    description:
+      'Full MERN-stack fashion e-commerce platform with a separate storefront and admin panel, plus integrated payments.',
+    tech: ['React', 'Redux', 'Node.js', 'Razorpay'],
+    link: 'https://www.aurabyanamika.in/',
+    accentColor: '#d946ef',
+  },
+  {
+    id: 'sheetal',
+    title: 'Sheetal Academy',
+    subtitle: 'Business Website & SEO',
+    description:
+      'Production website and admin dashboard for a live coaching institute with JWT auth and first-page Google rankings.',
+    tech: ['Next.js', 'MongoDB', 'JWT', 'SEO'],
+    link: 'https://sheetal-academy.vercel.app/',
+    accentColor: '#84cc16',
+  },
+];
+
+const techStrip = [
+  { name: 'Next.js', img: '/skills/next.jpeg' },
+  { name: 'React', img: '/skills/React.png' },
+  { name: 'Node.js', img: '/skills/node.png' },
+  { name: 'Express', img: '/skills/express.png' },
+  { name: 'MongoDB', img: '/skills/mongo.png' },
+  { name: 'JavaScript', img: '/skills/JavaScript.png' },
+  { name: 'Tailwind CSS', img: '/skills/tailwind.png' },
+  { name: 'Socket.io', img: '/skills/socket.png' },
+];
+
+function SectionLabel({ children }) {
+  return (
+    <p className="text-xs font-mono tracking-[0.25em] text-violet-400 uppercase mb-3">{children}</p>
+  );
+}
+
+function FeaturedProjectCard({ project, index }) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px -60px 0px' }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}
+      className="group relative rounded-2xl border border-white/8 bg-[#0d0d0d] p-6 hover:border-white/16 transition-colors duration-300"
+      itemScope
+      itemType="https://schema.org/CreativeWork"
+    >
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"
+        style={{ background: `linear-gradient(90deg, transparent, ${project.accentColor}, transparent)` }}
+        aria-hidden="true"
+      />
+      <h3 className="text-base font-bold text-white mb-1" itemProp="name">{project.title}</h3>
+      <p className="text-sm mb-3 font-medium" style={{ color: project.accentColor }}>{project.subtitle}</p>
+      <p className="text-sm text-gray-400 leading-relaxed mb-4" itemProp="description">{project.description}</p>
+      <div className="flex flex-wrap gap-1.5 mb-5">
+        {project.tech.map((t) => (
+          <span
+            key={t}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-gray-400 border border-white/8 font-medium"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      {project.link && project.link !== '#' ? (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${project.title} live project (opens in a new tab)`}
+          itemProp="url"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-200"
+          style={{ color: project.accentColor }}
+        >
+          <span>View Project</span>
+          <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+        </a>
+      ) : (
+        <span className="text-xs text-gray-600 italic">Private / In Progress</span>
+      )}
+    </motion.article>
+  );
+}
+
 export default function Home() {
   return (
     <main
-      className="relative flex min-h-screen w-full overflow-hidden rounded-md bg-black/[0.96] antialiased items-center justify-center px-4 sm:px-6 lg:px-8 pt-24"
-      aria-label="Sahil Chaurasiya – Full-Stack Developer Portfolio Home"
+      className="relative w-full overflow-hidden bg-black/[0.96] antialiased"
+      aria-label="Sahil Chaurasiya – Full-Stack Developer Portfolio"
     >
-      {/* Grid background */}
-      <div
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute inset-0 [background-size:30px_30px] sm:[background-size:40px_40px] select-none z-0",
-          "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
-        )}
-      />
 
-      {/* Enhanced gradient overlays */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-5 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.15)_0%,_transparent_50%)]" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-5 bg-[radial-gradient(ellipse_at_bottom,_rgba(59,130,246,0.15)_0%,_transparent_50%)]" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_50%,_rgba(0,0,0,0.7)_100%)]" />
+      {/* ══════════════════════════ HERO ══════════════════════════ */}
+      <section
+        className="relative flex min-h-screen w-full items-center justify-center px-4 sm:px-6 lg:px-8 pt-24"
+        aria-label="Introduction"
+      >
+        {/* Grid background */}
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-0 [background-size:30px_30px] sm:[background-size:40px_40px] select-none z-0",
+            "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
+          )}
+        />
 
-      {/* Animated gradient orbs */}
-      <motion.div
-        aria-hidden="true"
-        animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl z-5"
-      />
-      <motion.div
-        aria-hidden="true"
-        animate={{ x: [0, -50, 0], y: [0, 30, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl z-5"
-      />
+        {/* Enhanced gradient overlays */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-5 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.15)_0%,_transparent_50%)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-5 bg-[radial-gradient(ellipse_at_bottom,_rgba(59,130,246,0.15)_0%,_transparent_50%)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_50%,_rgba(0,0,0,0.7)_100%)]" />
 
-      {/* Spotlight */}
-      <Spotlight className="top-0 left-0 md:top-10 md:left-60 z-20" fill="white" />
+        {/* Animated gradient orbs */}
+        <motion.div
+          aria-hidden="true"
+          animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="pointer-events-none absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl z-5"
+        />
+        <motion.div
+          aria-hidden="true"
+          animate={{ x: [0, -50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="pointer-events-none absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl z-5"
+        />
 
-      {/* Main content */}
-      <div className="relative z-30 mx-auto w-full max-w-5xl text-center">
+        {/* Spotlight */}
+        <Spotlight className="top-0 left-0 md:top-10 md:left-60 z-20" fill="white" />
 
-        {/* Hero heading — h1 with keyword-rich text */}
-        <motion.h1
+        {/* Main content */}
+        <div className="relative z-30 mx-auto w-full max-w-5xl text-center">
+
+          {/* Hero heading — h1 with keyword-rich text */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+          >
+            👋 Hi, I&apos;m{" "}
+            <span
+              className="bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0"
+              style={{
+                fontFamily: 'var(--font-pacifico), cursive',
+                lineHeight: '1.2',
+                display: 'inline-block',
+                paddingBottom: '0.3em',
+                marginBottom: '-0.2em'
+              }}
+            >
+              Sahil Chaurasiya
+            </span>
+          </motion.h1>
+
+          {/* Keyword-rich intro paragraph */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="mx-auto mt-6 max-w-xl sm:max-w-2xl text-sm sm:text-base md:text-lg font-normal text-neutral-300 px-2"
+          >
+            I&apos;m a <strong className="text-white">Full-Stack Developer</strong> from Bhopal, India — currently building
+            production systems at <strong className="text-cyan-400">ToFly Media</strong> as their first software developer hire. I specialize in{" "}
+            <strong className="text-white">full-stack development</strong> using{" "}
+            <strong className="text-cyan-400">Next.js, React, Node.js, Express, MongoDB, and Django</strong>.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="mx-auto mt-4 max-w-xl sm:max-w-2xl text-xs sm:text-sm md:text-base text-neutral-400 px-2"
+          >
+            From SaaS client portals to GPS attendance systems — I ship real products end-to-end, from architecture to deployment.
+          </motion.p>
+
+          {/* Quick stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="flex justify-center gap-4 sm:gap-6 mt-8 flex-wrap"
+            aria-label="Portfolio statistics"
+          >
+            <div
+              className="px-4 py-2 bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 rounded-full backdrop-blur-sm"
+              title="10+ Projects built"
+            >
+              <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="10 plus projects">10+</div>
+              <div className="text-xs text-gray-400">Projects</div>
+            </div>
+            <div
+              className="px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full backdrop-blur-sm"
+              title="14+ Technologies mastered"
+            >
+              <div className="text-lg sm:text-xl font-bold text-cyan-400" aria-label="14 plus technologies">14+</div>
+              <div className="text-xs text-gray-400">Technologies</div>
+            </div>
+            <div
+              className="px-4 py-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 rounded-full backdrop-blur-sm"
+              title="CGPA at SISTec GN"
+            >
+              <div className="text-lg sm:text-xl font-bold text-green-400" aria-label="CGPA 7.32">7.32</div>
+              <div className="text-xs text-gray-400">CGPA</div>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
+          >
+            <Link href="/project" aria-label="View Sahil Chaurasiya's projects">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold cursor-pointer text-sm sm:text-base min-w-[160px] shadow-lg hover:from-violet-500 hover:to-cyan-500 transition-all"
+              >
+                View My Work
+              </motion.button>
+            </Link>
+            <Link href="/resume" aria-label="View Sahil Chaurasiya's resume">
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-full border-2 border-white/30 text-white font-semibold hover:border-white/60 transition cursor-pointer text-sm sm:text-base min-w-[160px] backdrop-blur-sm"
+              >
+                View Resume
+              </motion.button>
+            </Link>
+          </motion.div>
+
+          {/* Social links */}
+          <motion.nav
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+            className="mt-10 flex justify-center gap-5"
+            aria-label="Social media and contact links"
+          >
+            <motion.a
+              href="https://github.com/sahil-chaurasiya"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
+              aria-label="Sahil Chaurasiya on GitHub"
+              title="GitHub – sahil-chaurasiya"
+            >
+              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
+              aria-label="Sahil Chaurasiya on LinkedIn"
+              title="LinkedIn – Sahil Chaurasiya"
+            >
+              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </motion.a>
+            <motion.a
+              href="mailto:chaurasiyasahil18@gmail.com"
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
+              aria-label="Email Sahil Chaurasiya"
+              title="Email – chaurasiyasahil18@gmail.com"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </motion.a>
+            <motion.a
+              href="tel:+918176078586"
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
+              aria-label="Call Sahil Chaurasiya"
+              title="Phone – +91-8176078586"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </motion.a>
+          </motion.nav>
+        </div>
+      </section>
+
+      {/* ══════════════════════════ ABOUT PREVIEW ══════════════════════════ */}
+      <section
+        className="relative z-10 px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-white/8"
+        aria-label="About Sahil Chaurasiya"
+      >
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
+
+          {/* Left — Story */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <SectionLabel>✦ About Me</SectionLabel>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-5"
+              style={{ fontFamily: 'var(--font-pacifico), cursive' }}
+            >
+              Full-stack developer,{' '}
+              <span
+                style={{
+                  backgroundImage: 'linear-gradient(135deg, #7c3aed 0%, #0ea5e9 60%, #10b981 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                end to end.
+              </span>
+            </h2>
+            <div className="space-y-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+              <p>
+                I&apos;m a <strong className="text-white font-semibold">Full-Stack Web Developer</strong> based in{' '}
+                <strong className="text-white font-semibold">Bhopal, India</strong>, currently working as the first
+                software developer hire at <strong className="text-cyan-400">ToFly Media</strong>. I design and build
+                production-grade systems — client portals, admin dashboards, AI integrations, and real-time
+                applications — using the <strong className="text-white">MERN stack</strong> and{' '}
+                <strong className="text-white">Next.js</strong>.
+              </p>
+              <p>
+                Before that, I spent seven months as a Junior Software Developer at Shroti Telecom, shipping
+                full-stack apps in Django and Python. I&apos;m also a B.Tech Computer Science student at{' '}
+                <strong className="text-white">SISTec GN</strong>, competing on CodeChef and HackerRank in my spare
+                time.
+              </p>
+            </div>
+            <Link
+              href="/about"
+              aria-label="Read Sahil Chaurasiya's full story and work experience"
+              className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors"
+            >
+              <span>Read My Full Story</span>
+              <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
+          </motion.div>
+
+          {/* Right — Quick facts */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            className="rounded-2xl border border-white/8 bg-[#0d0d0d] p-6 sm:p-7"
+          >
+            <p className="text-xs font-mono tracking-widest text-gray-500 uppercase mb-4">Quick facts</p>
+            <ul className="space-y-3">
+              {[
+                { label: 'Based in', value: 'Bhopal, India 🇮🇳' },
+                { label: 'Role', value: 'Software Developer, ToFly Media' },
+                { label: 'Studying', value: 'B.Tech CS — SISTec GN' },
+                { label: 'Stack', value: 'MERN + Next.js' },
+                { label: 'Open to', value: 'Freelance & Collabs' },
+              ].map((item) => (
+                <li key={item.label} className="flex items-start justify-between gap-4 text-sm">
+                  <span className="text-gray-600 shrink-0">{item.label}</span>
+                  <span className="text-gray-300 text-right font-medium">{item.value}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════ FEATURED PROJECTS ══════════════════════════ */}
+      <section
+        className="relative z-10 px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-white/8"
+        aria-label="Featured projects by Sahil Chaurasiya"
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="mb-12 text-center"
+          >
+            <SectionLabel>✦ Featured Work</SectionLabel>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-4"
+              style={{ fontFamily: 'var(--font-pacifico), cursive' }}
+            >
+              Things I&apos;ve{' '}
+              <span
+                style={{
+                  backgroundImage: 'linear-gradient(135deg, #a78bfa, #38bdf8, #34d399)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Built
+              </span>
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              A selection of full-stack products, SaaS platforms, and client websites — from concept to production.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((project, idx) => (
+              <FeaturedProjectCard key={project.id} project={project} index={idx} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/project"
+              aria-label="View all projects by Sahil Chaurasiya"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+            >
+              <span>View All Projects</span>
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════ TECH STACK STRIP ══════════════════════════ */}
+      <section
+        className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 border-t border-white/8"
+        aria-label="Technologies Sahil Chaurasiya works with"
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <SectionLabel>✦ Tech Stack</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">Technologies I Work With</h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6"
+          >
+            {techStrip.map((tech) => (
+              <div
+                key={tech.name}
+                title={tech.name}
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/8 hover:border-white/20 transition-colors"
+              >
+                <Image src={tech.img} alt={`${tech.name} logo`} width={20} height={20} className="rounded-sm object-contain" />
+                <span className="text-xs sm:text-sm font-medium text-gray-300">{tech.name}</span>
+              </div>
+            ))}
+          </motion.div>
+          <Link
+            href="/skills"
+            aria-label="View Sahil Chaurasiya's full skills and technology stack"
+            className="inline-flex items-center gap-1.5 mt-8 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            <span>See Full Skill Set</span>
+            <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ══════════════════════════ FINAL CTA ══════════════════════════ */}
+      <section
+        className="relative z-10 px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-white/8"
+        aria-label="Contact Sahil Chaurasiya"
+      >
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto text-center"
         >
-          👋 Hi, I&apos;m{" "}
-          <span
-            className="bg-gradient-to-r from-violet-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0"
+          <h2
+            className="text-2xl sm:text-3xl font-bold mb-3"
             style={{
-              fontFamily: 'var(--font-pacifico), cursive',
-              lineHeight: '1.2',
-              display: 'inline-block',
-              paddingBottom: '0.3em',
-              marginBottom: '-0.2em'
+              backgroundImage: 'linear-gradient(135deg, #a78bfa, #38bdf8, #34d399)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
-            Sahil Chaurasiya
-          </span>
-        </motion.h1>
-
-        {/* Keyword-rich intro paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mx-auto mt-6 max-w-xl sm:max-w-2xl text-sm sm:text-base md:text-lg font-normal text-neutral-300 px-2"
-        >
-          I&apos;m a <strong className="text-white">Full-Stack Developer</strong> from Bhopal, India — currently building
-          production systems at <strong className="text-cyan-400">ToFly Media</strong> as their first software developer hire. I specialize in{" "}
-          <strong className="text-white">full-stack development</strong> using{" "}
-          <strong className="text-cyan-400">Next.js, React, Node.js, Express, MongoDB, and Django</strong>.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="mx-auto mt-4 max-w-xl sm:max-w-2xl text-xs sm:text-sm md:text-base text-neutral-400 px-2"
-        >
-          From SaaS client portals to GPS attendance systems — I ship real products end-to-end, from architecture to deployment.
-        </motion.p>
-
-        {/* Quick stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex justify-center gap-4 sm:gap-6 mt-8 flex-wrap"
-          aria-label="Portfolio statistics"
-        >
-          <div
-            className="px-4 py-2 bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 rounded-full backdrop-blur-sm"
-            title="10+ Projects built"
-          >
-            <div className="text-lg sm:text-xl font-bold text-violet-400" aria-label="10 plus projects">10+</div>
-            <div className="text-xs text-gray-400">Projects</div>
-          </div>
-          <div
-            className="px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full backdrop-blur-sm"
-            title="14+ Technologies mastered"
-          >
-            <div className="text-lg sm:text-xl font-bold text-cyan-400" aria-label="14 plus technologies">14+</div>
-            <div className="text-xs text-gray-400">Technologies</div>
-          </div>
-          <div
-            className="px-4 py-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 rounded-full backdrop-blur-sm"
-            title="CGPA at SISTec GN"
-          >
-            <div className="text-lg sm:text-xl font-bold text-green-400" aria-label="CGPA 7.32">7.32</div>
-            <div className="text-xs text-gray-400">CGPA</div>
-          </div>
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
-        >
-          <Link href="/project" aria-label="View Sahil Chaurasiya's projects">
+            Got something to build? Let&apos;s talk.
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-base mb-8">
+            I&apos;m open to freelance work, collaborations, and full-stack development opportunities.
+          </p>
+          <Link href="/contact" aria-label="Contact Sahil Chaurasiya">
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold cursor-pointer text-sm sm:text-base min-w-[160px] shadow-lg hover:from-violet-500 hover:to-cyan-500 transition-all"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold cursor-pointer text-sm sm:text-base shadow-lg hover:from-violet-500 hover:to-cyan-500 transition-all"
             >
-              View My Work
-            </motion.button>
-          </Link>
-          <Link href="/resume" aria-label="View Sahil Chaurasiya's resume">
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full border-2 border-white/30 text-white font-semibold hover:border-white/60 transition cursor-pointer text-sm sm:text-base min-w-[160px] backdrop-blur-sm"
-            >
-              View Resume
+              Get In Touch
             </motion.button>
           </Link>
         </motion.div>
+      </section>
 
-        {/* Social links */}
-        <motion.nav
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          className="mt-10 flex justify-center gap-5"
-          aria-label="Social media and contact links"
-        >
-          <motion.a
-            href="https://github.com/sahil-chaurasiya"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
-            aria-label="Sahil Chaurasiya on GitHub"
-            title="GitHub – sahil-chaurasiya"
-          >
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-            </svg>
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/sahil-chaurasiya-4a2505248/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
-            aria-label="Sahil Chaurasiya on LinkedIn"
-            title="LinkedIn – Sahil Chaurasiya"
-          >
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </motion.a>
-          <motion.a
-            href="mailto:chaurasiyasahil18@gmail.com"
-            whileHover={{ scale: 1.2, y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
-            aria-label="Email Sahil Chaurasiya"
-            title="Email – chaurasiyasahil18@gmail.com"
-          >
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </motion.a>
-          <motion.a
-            href="tel:+918176078586"
-            whileHover={{ scale: 1.2, y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition-all"
-            aria-label="Call Sahil Chaurasiya"
-            title="Phone – +91-8176078586"
-          >
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-          </motion.a>
-        </motion.nav>
-      </div>
     </main>
   );
 }
